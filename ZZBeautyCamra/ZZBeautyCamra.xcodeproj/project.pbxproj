@@ -19,6 +19,8 @@
 		FF49A25C24EB704200FC60FC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FF49A25B24EB704200FC60FC /* main.m */; };
 		FF49A26624EB704200FC60FC /* ZZBeautyCamraTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FF49A26524EB704200FC60FC /* ZZBeautyCamraTests.m */; };
 		FF49A27124EB704200FC60FC /* ZZBeautyCamraUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = FF49A27024EB704200FC60FC /* ZZBeautyCamraUITests.m */; };
+		FF49A28B24EB7C5600FC60FC /* GPUImage11.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FF49A28924EB7C5600FC60FC /* GPUImage11.pdf */; };
+		FF49A28C24EB7C5600FC60FC /* Preview.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FF49A28A24EB7C5600FC60FC /* Preview.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +68,8 @@
 		FF49A26C24EB704200FC60FC /* ZZBeautyCamraUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZZBeautyCamraUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF49A27024EB704200FC60FC /* ZZBeautyCamraUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZZBeautyCamraUITests.m; sourceTree = "<group>"; };
 		FF49A27224EB704200FC60FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FF49A28924EB7C5600FC60FC /* GPUImage11.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = GPUImage11.pdf; sourceTree = "<group>"; };
+		FF49A28A24EB7C5600FC60FC /* Preview.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Preview.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +159,8 @@
 				FF49A25724EB704200FC60FC /* LaunchScreen.storyboard */,
 				FF49A25A24EB704200FC60FC /* Info.plist */,
 				FF49A25B24EB704200FC60FC /* main.m */,
+				FF49A28924EB7C5600FC60FC /* GPUImage11.pdf */,
+				FF49A28A24EB7C5600FC60FC /* Preview.jpg */,
 			);
 			path = ZZBeautyCamra;
 			sourceTree = "<group>";
@@ -285,9 +291,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF49A28C24EB7C5600FC60FC /* Preview.jpg in Resources */,
 				FF49A25924EB704200FC60FC /* LaunchScreen.storyboard in Resources */,
 				FF49A25624EB704200FC60FC /* Assets.xcassets in Resources */,
 				FF49A25424EB703B00FC60FC /* Main.storyboard in Resources */,
+				FF49A28B24EB7C5600FC60FC /* GPUImage11.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

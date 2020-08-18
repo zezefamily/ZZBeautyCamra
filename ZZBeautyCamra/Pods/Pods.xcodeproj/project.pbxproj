@@ -917,6 +917,10 @@
 		C8F35214199B21FFBE4A02DAFF8B6983 /* GPUImage */ = {
 			isa = PBXGroup;
 			children = (
+				FF49A28324EB77F000FC60FC /* Inputs */,
+				FF49A28224EB77E400FC60FC /* Filters */,
+				FF49A28124EB77D100FC60FC /* GPUImageFilterPipeline */,
+				FF49A28024EB77B900FC60FC /* GPUImageOutput */,
 				5E5069BE30119A23877817ACC422C276 /* GLProgram.h */,
 				9DEFD9ECCF2FE315F7C2C2C75BBE7FA7 /* GLProgram.m */,
 				16BE3F7C8E64C4186FF4DFF329349D72 /* GPUImage.h */,
@@ -1279,6 +1283,74 @@
 			);
 			name = "Pods-ZZBeautyCamra-ZZBeautyCamraUITests";
 			path = "Target Support Files/Pods-ZZBeautyCamra-ZZBeautyCamraUITests";
+			sourceTree = "<group>";
+		};
+		FF49A28024EB77B900FC60FC /* GPUImageOutput */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = GPUImageOutput;
+			sourceTree = "<group>";
+		};
+		FF49A28124EB77D100FC60FC /* GPUImageFilterPipeline */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = GPUImageFilterPipeline;
+			sourceTree = "<group>";
+		};
+		FF49A28224EB77E400FC60FC /* Filters */ = {
+			isa = PBXGroup;
+			children = (
+				FF49A28824EB786500FC60FC /* Effects */,
+				FF49A28724EB785E00FC60FC /* Blends */,
+				FF49A28624EB785100FC60FC /* ImageProcession */,
+				FF49A28524EB783C00FC60FC /* ColorProcession */,
+				FF49A28424EB783400FC60FC /* Base */,
+			);
+			path = Filters;
+			sourceTree = "<group>";
+		};
+		FF49A28324EB77F000FC60FC /* Inputs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Inputs;
+			sourceTree = "<group>";
+		};
+		FF49A28424EB783400FC60FC /* Base */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		FF49A28524EB783C00FC60FC /* ColorProcession */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ColorProcession;
+			sourceTree = "<group>";
+		};
+		FF49A28624EB785100FC60FC /* ImageProcession */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ImageProcession;
+			sourceTree = "<group>";
+		};
+		FF49A28724EB785E00FC60FC /* Blends */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Blends;
+			sourceTree = "<group>";
+		};
+		FF49A28824EB786500FC60FC /* Effects */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Effects;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
