@@ -3,10 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AED09050BE9D2FBB140F51AC /* Pods_ZZBeautyCamra.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29F222E667B39B5C6401F1BF /* Pods_ZZBeautyCamra.framework */; };
+		D7FBBDDC24C8DEF3B9436744 /* Pods_ZZBeautyCamraTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AE7EFE106EF5E02D6ACBCCB /* Pods_ZZBeautyCamraTests.framework */; };
+		F39C26DF28CD48C14BC692C8 /* Pods_ZZBeautyCamra_ZZBeautyCamraUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A9F247B359ED37F9BC75351 /* Pods_ZZBeautyCamra_ZZBeautyCamraUITests.framework */; };
 		FF49A24B24EB703B00FC60FC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FF49A24A24EB703B00FC60FC /* AppDelegate.m */; };
 		FF49A24E24EB703B00FC60FC /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FF49A24D24EB703B00FC60FC /* SceneDelegate.m */; };
 		FF49A25124EB703B00FC60FC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF49A25024EB703B00FC60FC /* ViewController.m */; };
@@ -36,6 +39,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A3A8EBB93FA2870F01A9BCD /* Pods-ZZBeautyCamra-ZZBeautyCamraUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZZBeautyCamra-ZZBeautyCamraUITests.release.xcconfig"; path = "Target Support Files/Pods-ZZBeautyCamra-ZZBeautyCamraUITests/Pods-ZZBeautyCamra-ZZBeautyCamraUITests.release.xcconfig"; sourceTree = "<group>"; };
+		0A9F247B359ED37F9BC75351 /* Pods_ZZBeautyCamra_ZZBeautyCamraUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZZBeautyCamra_ZZBeautyCamraUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1ED573F12B9F915AC6FD3332 /* Pods-ZZBeautyCamra-ZZBeautyCamraUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZZBeautyCamra-ZZBeautyCamraUITests.debug.xcconfig"; path = "Target Support Files/Pods-ZZBeautyCamra-ZZBeautyCamraUITests/Pods-ZZBeautyCamra-ZZBeautyCamraUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		288800A900E8E74D13A4BB98 /* Pods-ZZBeautyCamraTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZZBeautyCamraTests.release.xcconfig"; path = "Target Support Files/Pods-ZZBeautyCamraTests/Pods-ZZBeautyCamraTests.release.xcconfig"; sourceTree = "<group>"; };
+		29F222E667B39B5C6401F1BF /* Pods_ZZBeautyCamra.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZZBeautyCamra.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5EC9B90C1F5494838CD39FED /* Pods-ZZBeautyCamra.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZZBeautyCamra.debug.xcconfig"; path = "Target Support Files/Pods-ZZBeautyCamra/Pods-ZZBeautyCamra.debug.xcconfig"; sourceTree = "<group>"; };
+		8AE7EFE106EF5E02D6ACBCCB /* Pods_ZZBeautyCamraTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZZBeautyCamraTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		994CF0F4F54DD6F34AFA9A14 /* Pods-ZZBeautyCamraTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZZBeautyCamraTests.debug.xcconfig"; path = "Target Support Files/Pods-ZZBeautyCamraTests/Pods-ZZBeautyCamraTests.debug.xcconfig"; sourceTree = "<group>"; };
+		AE7CD43DAEE40D6FE891B90A /* Pods-ZZBeautyCamra.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZZBeautyCamra.release.xcconfig"; path = "Target Support Files/Pods-ZZBeautyCamra/Pods-ZZBeautyCamra.release.xcconfig"; sourceTree = "<group>"; };
 		FF49A24624EB703B00FC60FC /* ZZBeautyCamra.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZZBeautyCamra.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF49A24924EB703B00FC60FC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FF49A24A24EB703B00FC60FC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -61,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AED09050BE9D2FBB140F51AC /* Pods_ZZBeautyCamra.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7FBBDDC24C8DEF3B9436744 /* Pods_ZZBeautyCamraTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,12 +89,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F39C26DF28CD48C14BC692C8 /* Pods_ZZBeautyCamra_ZZBeautyCamraUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7E5BAAD265917933793DD3BB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5EC9B90C1F5494838CD39FED /* Pods-ZZBeautyCamra.debug.xcconfig */,
+				AE7CD43DAEE40D6FE891B90A /* Pods-ZZBeautyCamra.release.xcconfig */,
+				1ED573F12B9F915AC6FD3332 /* Pods-ZZBeautyCamra-ZZBeautyCamraUITests.debug.xcconfig */,
+				0A3A8EBB93FA2870F01A9BCD /* Pods-ZZBeautyCamra-ZZBeautyCamraUITests.release.xcconfig */,
+				994CF0F4F54DD6F34AFA9A14 /* Pods-ZZBeautyCamraTests.debug.xcconfig */,
+				288800A900E8E74D13A4BB98 /* Pods-ZZBeautyCamraTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		F15B20C836694D4EAD696B73 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				29F222E667B39B5C6401F1BF /* Pods_ZZBeautyCamra.framework */,
+				0A9F247B359ED37F9BC75351 /* Pods_ZZBeautyCamra_ZZBeautyCamraUITests.framework */,
+				8AE7EFE106EF5E02D6ACBCCB /* Pods_ZZBeautyCamraTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FF49A23D24EB703A00FC60FC = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +126,8 @@
 				FF49A26424EB704200FC60FC /* ZZBeautyCamraTests */,
 				FF49A26F24EB704200FC60FC /* ZZBeautyCamraUITests */,
 				FF49A24724EB703B00FC60FC /* Products */,
+				7E5BAAD265917933793DD3BB /* Pods */,
+				F15B20C836694D4EAD696B73 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -144,9 +184,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FF49A27524EB704200FC60FC /* Build configuration list for PBXNativeTarget "ZZBeautyCamra" */;
 			buildPhases = (
+				081BBEE5E2E0EF6A0BBDE569 /* [CP] Check Pods Manifest.lock */,
 				FF49A24224EB703A00FC60FC /* Sources */,
 				FF49A24324EB703A00FC60FC /* Frameworks */,
 				FF49A24424EB703A00FC60FC /* Resources */,
+				40DABE5159DC7F31890CF3F5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -161,6 +203,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FF49A27824EB704200FC60FC /* Build configuration list for PBXNativeTarget "ZZBeautyCamraTests" */;
 			buildPhases = (
+				89D7D71B8A220C05DE1A800B /* [CP] Check Pods Manifest.lock */,
 				FF49A25D24EB704200FC60FC /* Sources */,
 				FF49A25E24EB704200FC60FC /* Frameworks */,
 				FF49A25F24EB704200FC60FC /* Resources */,
@@ -179,9 +222,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FF49A27B24EB704200FC60FC /* Build configuration list for PBXNativeTarget "ZZBeautyCamraUITests" */;
 			buildPhases = (
+				F4F9DC7FEDCF87318AEE30C6 /* [CP] Check Pods Manifest.lock */,
 				FF49A26824EB704200FC60FC /* Sources */,
 				FF49A26924EB704200FC60FC /* Frameworks */,
 				FF49A26A24EB704200FC60FC /* Resources */,
+				3FBAE3CCC78AC08FCA3EE088 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -261,6 +306,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		081BBEE5E2E0EF6A0BBDE569 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ZZBeautyCamra-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3FBAE3CCC78AC08FCA3EE088 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ZZBeautyCamra-ZZBeautyCamraUITests/Pods-ZZBeautyCamra-ZZBeautyCamraUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ZZBeautyCamra-ZZBeautyCamraUITests/Pods-ZZBeautyCamra-ZZBeautyCamraUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ZZBeautyCamra-ZZBeautyCamraUITests/Pods-ZZBeautyCamra-ZZBeautyCamraUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		40DABE5159DC7F31890CF3F5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ZZBeautyCamra/Pods-ZZBeautyCamra-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ZZBeautyCamra/Pods-ZZBeautyCamra-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ZZBeautyCamra/Pods-ZZBeautyCamra-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		89D7D71B8A220C05DE1A800B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ZZBeautyCamraTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F4F9DC7FEDCF87318AEE30C6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ZZBeautyCamra-ZZBeautyCamraUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FF49A24224EB703A00FC60FC /* Sources */ = {
@@ -437,10 +585,12 @@
 		};
 		FF49A27624EB704200FC60FC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5EC9B90C1F5494838CD39FED /* Pods-ZZBeautyCamra.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ZZBeautyCamra/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -453,10 +603,12 @@
 		};
 		FF49A27724EB704200FC60FC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AE7CD43DAEE40D6FE891B90A /* Pods-ZZBeautyCamra.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ZZBeautyCamra/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -469,6 +621,7 @@
 		};
 		FF49A27924EB704200FC60FC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 994CF0F4F54DD6F34AFA9A14 /* Pods-ZZBeautyCamraTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -488,6 +641,7 @@
 		};
 		FF49A27A24EB704200FC60FC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 288800A900E8E74D13A4BB98 /* Pods-ZZBeautyCamraTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -507,6 +661,7 @@
 		};
 		FF49A27C24EB704200FC60FC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1ED573F12B9F915AC6FD3332 /* Pods-ZZBeautyCamra-ZZBeautyCamraUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ZZBeautyCamraUITests/Info.plist;
@@ -524,6 +679,7 @@
 		};
 		FF49A27D24EB704200FC60FC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0A3A8EBB93FA2870F01A9BCD /* Pods-ZZBeautyCamra-ZZBeautyCamraUITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ZZBeautyCamraUITests/Info.plist;

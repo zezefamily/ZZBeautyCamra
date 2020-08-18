@@ -1,0 +1,6 @@
+framework module Pods_ZZBeautyCamra_ZZBeautyCamraUITests {
+  umbrella header "Pods-ZZBeautyCamra-ZZBeautyCamraUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
