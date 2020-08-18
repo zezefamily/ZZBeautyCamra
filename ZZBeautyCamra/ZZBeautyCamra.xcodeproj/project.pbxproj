@@ -21,6 +21,7 @@
 		FF49A27124EB704200FC60FC /* ZZBeautyCamraUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = FF49A27024EB704200FC60FC /* ZZBeautyCamraUITests.m */; };
 		FF49A28B24EB7C5600FC60FC /* GPUImage11.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FF49A28924EB7C5600FC60FC /* GPUImage11.pdf */; };
 		FF49A28C24EB7C5600FC60FC /* Preview.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FF49A28A24EB7C5600FC60FC /* Preview.jpg */; };
+		FF49A28F24EBE44800FC60FC /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF49A28E24EBE44800FC60FC /* MainViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,8 @@
 		FF49A27224EB704200FC60FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FF49A28924EB7C5600FC60FC /* GPUImage11.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = GPUImage11.pdf; sourceTree = "<group>"; };
 		FF49A28A24EB7C5600FC60FC /* Preview.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Preview.jpg; sourceTree = "<group>"; };
+		FF49A28D24EBE44800FC60FC /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		FF49A28E24EBE44800FC60FC /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +151,7 @@
 		FF49A24824EB703B00FC60FC /* ZZBeautyCamra */ = {
 			isa = PBXGroup;
 			children = (
+				FF49A29024EBE44F00FC60FC /* pages */,
 				FF49A24924EB703B00FC60FC /* AppDelegate.h */,
 				FF49A24A24EB703B00FC60FC /* AppDelegate.m */,
 				FF49A24C24EB703B00FC60FC /* SceneDelegate.h */,
@@ -181,6 +185,15 @@
 				FF49A27224EB704200FC60FC /* Info.plist */,
 			);
 			path = ZZBeautyCamraUITests;
+			sourceTree = "<group>";
+		};
+		FF49A29024EBE44F00FC60FC /* pages */ = {
+			isa = PBXGroup;
+			children = (
+				FF49A28D24EBE44800FC60FC /* MainViewController.h */,
+				FF49A28E24EBE44800FC60FC /* MainViewController.m */,
+			);
+			path = pages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -426,6 +439,7 @@
 				FF49A25124EB703B00FC60FC /* ViewController.m in Sources */,
 				FF49A24B24EB703B00FC60FC /* AppDelegate.m in Sources */,
 				FF49A25C24EB704200FC60FC /* main.m in Sources */,
+				FF49A28F24EBE44800FC60FC /* MainViewController.m in Sources */,
 				FF49A24E24EB703B00FC60FC /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -597,6 +611,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BKB2W89RHK;
 				INFOPLIST_FILE = ZZBeautyCamra/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -605,7 +620,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ios.ZZBeautyCamra;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -615,6 +630,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BKB2W89RHK;
 				INFOPLIST_FILE = ZZBeautyCamra/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -623,7 +639,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ios.ZZBeautyCamra;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
