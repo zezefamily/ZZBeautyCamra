@@ -1,2 +1,3 @@
 # ZZBeautyCamra
 自定义美颜相机，建设中...
+OpenGL ES, GLSL, GPUImage, Metal
