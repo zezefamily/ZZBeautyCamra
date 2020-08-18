@@ -1,0 +1,584 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FF49A24B24EB703B00FC60FC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FF49A24A24EB703B00FC60FC /* AppDelegate.m */; };
+		FF49A24E24EB703B00FC60FC /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FF49A24D24EB703B00FC60FC /* SceneDelegate.m */; };
+		FF49A25124EB703B00FC60FC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF49A25024EB703B00FC60FC /* ViewController.m */; };
+		FF49A25424EB703B00FC60FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF49A25224EB703B00FC60FC /* Main.storyboard */; };
+		FF49A25624EB704200FC60FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF49A25524EB704200FC60FC /* Assets.xcassets */; };
+		FF49A25924EB704200FC60FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF49A25724EB704200FC60FC /* LaunchScreen.storyboard */; };
+		FF49A25C24EB704200FC60FC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FF49A25B24EB704200FC60FC /* main.m */; };
+		FF49A26624EB704200FC60FC /* ZZBeautyCamraTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FF49A26524EB704200FC60FC /* ZZBeautyCamraTests.m */; };
+		FF49A27124EB704200FC60FC /* ZZBeautyCamraUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = FF49A27024EB704200FC60FC /* ZZBeautyCamraUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FF49A26224EB704200FC60FC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FF49A23E24EB703A00FC60FC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FF49A24524EB703A00FC60FC;
+			remoteInfo = ZZBeautyCamra;
+		};
+		FF49A26D24EB704200FC60FC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FF49A23E24EB703A00FC60FC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FF49A24524EB703A00FC60FC;
+			remoteInfo = ZZBeautyCamra;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FF49A24624EB703B00FC60FC /* ZZBeautyCamra.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZZBeautyCamra.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF49A24924EB703B00FC60FC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		FF49A24A24EB703B00FC60FC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		FF49A24C24EB703B00FC60FC /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		FF49A24D24EB703B00FC60FC /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		FF49A24F24EB703B00FC60FC /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		FF49A25024EB703B00FC60FC /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		FF49A25324EB703B00FC60FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FF49A25524EB704200FC60FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FF49A25824EB704200FC60FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FF49A25A24EB704200FC60FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FF49A25B24EB704200FC60FC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FF49A26124EB704200FC60FC /* ZZBeautyCamraTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZZBeautyCamraTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF49A26524EB704200FC60FC /* ZZBeautyCamraTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZZBeautyCamraTests.m; sourceTree = "<group>"; };
+		FF49A26724EB704200FC60FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FF49A26C24EB704200FC60FC /* ZZBeautyCamraUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZZBeautyCamraUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF49A27024EB704200FC60FC /* ZZBeautyCamraUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZZBeautyCamraUITests.m; sourceTree = "<group>"; };
+		FF49A27224EB704200FC60FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FF49A24324EB703A00FC60FC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF49A25E24EB704200FC60FC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF49A26924EB704200FC60FC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FF49A23D24EB703A00FC60FC = {
+			isa = PBXGroup;
+			children = (
+				FF49A24824EB703B00FC60FC /* ZZBeautyCamra */,
+				FF49A26424EB704200FC60FC /* ZZBeautyCamraTests */,
+				FF49A26F24EB704200FC60FC /* ZZBeautyCamraUITests */,
+				FF49A24724EB703B00FC60FC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FF49A24724EB703B00FC60FC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FF49A24624EB703B00FC60FC /* ZZBeautyCamra.app */,
+				FF49A26124EB704200FC60FC /* ZZBeautyCamraTests.xctest */,
+				FF49A26C24EB704200FC60FC /* ZZBeautyCamraUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FF49A24824EB703B00FC60FC /* ZZBeautyCamra */ = {
+			isa = PBXGroup;
+			children = (
+				FF49A24924EB703B00FC60FC /* AppDelegate.h */,
+				FF49A24A24EB703B00FC60FC /* AppDelegate.m */,
+				FF49A24C24EB703B00FC60FC /* SceneDelegate.h */,
+				FF49A24D24EB703B00FC60FC /* SceneDelegate.m */,
+				FF49A24F24EB703B00FC60FC /* ViewController.h */,
+				FF49A25024EB703B00FC60FC /* ViewController.m */,
+				FF49A25224EB703B00FC60FC /* Main.storyboard */,
+				FF49A25524EB704200FC60FC /* Assets.xcassets */,
+				FF49A25724EB704200FC60FC /* LaunchScreen.storyboard */,
+				FF49A25A24EB704200FC60FC /* Info.plist */,
+				FF49A25B24EB704200FC60FC /* main.m */,
+			);
+			path = ZZBeautyCamra;
+			sourceTree = "<group>";
+		};
+		FF49A26424EB704200FC60FC /* ZZBeautyCamraTests */ = {
+			isa = PBXGroup;
+			children = (
+				FF49A26524EB704200FC60FC /* ZZBeautyCamraTests.m */,
+				FF49A26724EB704200FC60FC /* Info.plist */,
+			);
+			path = ZZBeautyCamraTests;
+			sourceTree = "<group>";
+		};
+		FF49A26F24EB704200FC60FC /* ZZBeautyCamraUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FF49A27024EB704200FC60FC /* ZZBeautyCamraUITests.m */,
+				FF49A27224EB704200FC60FC /* Info.plist */,
+			);
+			path = ZZBeautyCamraUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FF49A24524EB703A00FC60FC /* ZZBeautyCamra */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FF49A27524EB704200FC60FC /* Build configuration list for PBXNativeTarget "ZZBeautyCamra" */;
+			buildPhases = (
+				FF49A24224EB703A00FC60FC /* Sources */,
+				FF49A24324EB703A00FC60FC /* Frameworks */,
+				FF49A24424EB703A00FC60FC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ZZBeautyCamra;
+			productName = ZZBeautyCamra;
+			productReference = FF49A24624EB703B00FC60FC /* ZZBeautyCamra.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FF49A26024EB704200FC60FC /* ZZBeautyCamraTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FF49A27824EB704200FC60FC /* Build configuration list for PBXNativeTarget "ZZBeautyCamraTests" */;
+			buildPhases = (
+				FF49A25D24EB704200FC60FC /* Sources */,
+				FF49A25E24EB704200FC60FC /* Frameworks */,
+				FF49A25F24EB704200FC60FC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FF49A26324EB704200FC60FC /* PBXTargetDependency */,
+			);
+			name = ZZBeautyCamraTests;
+			productName = ZZBeautyCamraTests;
+			productReference = FF49A26124EB704200FC60FC /* ZZBeautyCamraTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FF49A26B24EB704200FC60FC /* ZZBeautyCamraUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FF49A27B24EB704200FC60FC /* Build configuration list for PBXNativeTarget "ZZBeautyCamraUITests" */;
+			buildPhases = (
+				FF49A26824EB704200FC60FC /* Sources */,
+				FF49A26924EB704200FC60FC /* Frameworks */,
+				FF49A26A24EB704200FC60FC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FF49A26E24EB704200FC60FC /* PBXTargetDependency */,
+			);
+			name = ZZBeautyCamraUITests;
+			productName = ZZBeautyCamraUITests;
+			productReference = FF49A26C24EB704200FC60FC /* ZZBeautyCamraUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FF49A23E24EB703A00FC60FC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1140;
+				ORGANIZATIONNAME = "泽泽";
+				TargetAttributes = {
+					FF49A24524EB703A00FC60FC = {
+						CreatedOnToolsVersion = 11.4.1;
+					};
+					FF49A26024EB704200FC60FC = {
+						CreatedOnToolsVersion = 11.4.1;
+						TestTargetID = FF49A24524EB703A00FC60FC;
+					};
+					FF49A26B24EB704200FC60FC = {
+						CreatedOnToolsVersion = 11.4.1;
+						TestTargetID = FF49A24524EB703A00FC60FC;
+					};
+				};
+			};
+			buildConfigurationList = FF49A24124EB703A00FC60FC /* Build configuration list for PBXProject "ZZBeautyCamra" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FF49A23D24EB703A00FC60FC;
+			productRefGroup = FF49A24724EB703B00FC60FC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FF49A24524EB703A00FC60FC /* ZZBeautyCamra */,
+				FF49A26024EB704200FC60FC /* ZZBeautyCamraTests */,
+				FF49A26B24EB704200FC60FC /* ZZBeautyCamraUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FF49A24424EB703A00FC60FC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF49A25924EB704200FC60FC /* LaunchScreen.storyboard in Resources */,
+				FF49A25624EB704200FC60FC /* Assets.xcassets in Resources */,
+				FF49A25424EB703B00FC60FC /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF49A25F24EB704200FC60FC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF49A26A24EB704200FC60FC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FF49A24224EB703A00FC60FC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF49A25124EB703B00FC60FC /* ViewController.m in Sources */,
+				FF49A24B24EB703B00FC60FC /* AppDelegate.m in Sources */,
+				FF49A25C24EB704200FC60FC /* main.m in Sources */,
+				FF49A24E24EB703B00FC60FC /* SceneDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF49A25D24EB704200FC60FC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF49A26624EB704200FC60FC /* ZZBeautyCamraTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF49A26824EB704200FC60FC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF49A27124EB704200FC60FC /* ZZBeautyCamraUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FF49A26324EB704200FC60FC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FF49A24524EB703A00FC60FC /* ZZBeautyCamra */;
+			targetProxy = FF49A26224EB704200FC60FC /* PBXContainerItemProxy */;
+		};
+		FF49A26E24EB704200FC60FC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FF49A24524EB703A00FC60FC /* ZZBeautyCamra */;
+			targetProxy = FF49A26D24EB704200FC60FC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FF49A25224EB703B00FC60FC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FF49A25324EB703B00FC60FC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FF49A25724EB704200FC60FC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FF49A25824EB704200FC60FC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FF49A27324EB704200FC60FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		FF49A27424EB704200FC60FC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FF49A27624EB704200FC60FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ZZBeautyCamra/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ios.ZZBeautyCamra;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FF49A27724EB704200FC60FC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ZZBeautyCamra/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ios.ZZBeautyCamra;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		FF49A27924EB704200FC60FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ZZBeautyCamraTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ios.ZZBeautyCamraTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ZZBeautyCamra.app/ZZBeautyCamra";
+			};
+			name = Debug;
+		};
+		FF49A27A24EB704200FC60FC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ZZBeautyCamraTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ios.ZZBeautyCamraTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ZZBeautyCamra.app/ZZBeautyCamra";
+			};
+			name = Release;
+		};
+		FF49A27C24EB704200FC60FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ZZBeautyCamraUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ios.ZZBeautyCamraUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ZZBeautyCamra;
+			};
+			name = Debug;
+		};
+		FF49A27D24EB704200FC60FC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ZZBeautyCamraUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ios.ZZBeautyCamraUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ZZBeautyCamra;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FF49A24124EB703A00FC60FC /* Build configuration list for PBXProject "ZZBeautyCamra" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF49A27324EB704200FC60FC /* Debug */,
+				FF49A27424EB704200FC60FC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FF49A27524EB704200FC60FC /* Build configuration list for PBXNativeTarget "ZZBeautyCamra" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF49A27624EB704200FC60FC /* Debug */,
+				FF49A27724EB704200FC60FC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FF49A27824EB704200FC60FC /* Build configuration list for PBXNativeTarget "ZZBeautyCamraTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF49A27924EB704200FC60FC /* Debug */,
+				FF49A27A24EB704200FC60FC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FF49A27B24EB704200FC60FC /* Build configuration list for PBXNativeTarget "ZZBeautyCamraUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF49A27C24EB704200FC60FC /* Debug */,
+				FF49A27D24EB704200FC60FC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FF49A23E24EB703A00FC60FC /* Project object */;
+}
