@@ -7,7 +7,7 @@
 //
 
 #import "MainViewController.h"
-
+#import "CamraViewController.h"
 @interface MainViewController ()
 {
     UIImageView *_bannerImgView;
@@ -62,7 +62,9 @@
 
 - (void)camraClick
 {
-    
+    CamraViewController *camraVC = [[CamraViewController alloc]init];
+//    [self presentViewController:camraVC animated:YES completion:nil];
+    [self.navigationController pushViewController:camraVC animated:YES];
 }
 
 - (void)menuClick:(UIButton *)sender

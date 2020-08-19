@@ -10,6 +10,7 @@
 		AED09050BE9D2FBB140F51AC /* Pods_ZZBeautyCamra.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29F222E667B39B5C6401F1BF /* Pods_ZZBeautyCamra.framework */; };
 		D7FBBDDC24C8DEF3B9436744 /* Pods_ZZBeautyCamraTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AE7EFE106EF5E02D6ACBCCB /* Pods_ZZBeautyCamraTests.framework */; };
 		F39C26DF28CD48C14BC692C8 /* Pods_ZZBeautyCamra_ZZBeautyCamraUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A9F247B359ED37F9BC75351 /* Pods_ZZBeautyCamra_ZZBeautyCamraUITests.framework */; };
+		F427E46A24ECA1B800D2772C /* CamraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F427E46924ECA1B800D2772C /* CamraViewController.m */; };
 		FF49A24B24EB703B00FC60FC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FF49A24A24EB703B00FC60FC /* AppDelegate.m */; };
 		FF49A24E24EB703B00FC60FC /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FF49A24D24EB703B00FC60FC /* SceneDelegate.m */; };
 		FF49A25124EB703B00FC60FC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF49A25024EB703B00FC60FC /* ViewController.m */; };
@@ -51,6 +52,8 @@
 		8AE7EFE106EF5E02D6ACBCCB /* Pods_ZZBeautyCamraTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZZBeautyCamraTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		994CF0F4F54DD6F34AFA9A14 /* Pods-ZZBeautyCamraTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZZBeautyCamraTests.debug.xcconfig"; path = "Target Support Files/Pods-ZZBeautyCamraTests/Pods-ZZBeautyCamraTests.debug.xcconfig"; sourceTree = "<group>"; };
 		AE7CD43DAEE40D6FE891B90A /* Pods-ZZBeautyCamra.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZZBeautyCamra.release.xcconfig"; path = "Target Support Files/Pods-ZZBeautyCamra/Pods-ZZBeautyCamra.release.xcconfig"; sourceTree = "<group>"; };
+		F427E46824ECA1B800D2772C /* CamraViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CamraViewController.h; sourceTree = "<group>"; };
+		F427E46924ECA1B800D2772C /* CamraViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CamraViewController.m; sourceTree = "<group>"; };
 		FF49A24624EB703B00FC60FC /* ZZBeautyCamra.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZZBeautyCamra.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF49A24924EB703B00FC60FC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FF49A24A24EB703B00FC60FC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -192,6 +195,8 @@
 			children = (
 				FF49A28D24EBE44800FC60FC /* MainViewController.h */,
 				FF49A28E24EBE44800FC60FC /* MainViewController.m */,
+				F427E46824ECA1B800D2772C /* CamraViewController.h */,
+				F427E46924ECA1B800D2772C /* CamraViewController.m */,
 			);
 			path = pages;
 			sourceTree = "<group>";
@@ -437,6 +442,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF49A25124EB703B00FC60FC /* ViewController.m in Sources */,
+				F427E46A24ECA1B800D2772C /* CamraViewController.m in Sources */,
 				FF49A24B24EB703B00FC60FC /* AppDelegate.m in Sources */,
 				FF49A25C24EB704200FC60FC /* main.m in Sources */,
 				FF49A28F24EBE44800FC60FC /* MainViewController.m in Sources */,
