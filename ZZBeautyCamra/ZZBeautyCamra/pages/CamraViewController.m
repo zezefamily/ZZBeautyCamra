@@ -9,26 +9,17 @@
 
 #import "CamraViewController.h"
 #import "GPUImage.h"
-//#import <PhotosUI/PhotosUI.h>
-//#import <AssetsLibrary/ALAssetsLibrary.h>
+
 #import "CamraTopBar.h"
+#import "CameraBottomBar.h"
+#import "ZZPresentationController.h"
+#import "ImageFilterViewController.h"
+#import "ZZMagicCamera.h"
 
-@interface CamraViewController ()<CamraTopBarDelegate>
-{
-    GPUImageStillCamera *stillCamera;
-    GPUImageFilter *grayFilter;
-}
-@property(strong,nonatomic) GPUImageVideoCamera *vCamera;
-@property(strong,nonatomic) GPUImageStillCamera *mCamera;
-@property(strong,nonatomic) GPUImageFilter *mFilter;
-@property(strong,nonatomic) GPUImageView *mGPUImgView;
-
-
+@interface CamraViewController ()<CamraTopBarDelegate,CameraBottomBarDelegate,UINavigationControllerDelegate,UIViewControllerTransitioningDelegate>
+@property (nonatomic,strong) ZZMagicCamera *magicCamera;
 @property (nonatomic,strong) CamraTopBar *cameraTopBar;
-
-
-
-
+@property (nonatomic,strong) CameraBottomBar *cameraBottomBar;
 @end
 
 @implementation CamraViewController
@@ -37,65 +28,23 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
+    self.navigationController.delegate = self;
     [self demo1];
-    
     [self addTopBar];
-    //添加GPUImage
-//    [self addFiterCamera];
-    
-    //添加一个按钮触发拍照
-    UIButton *btn = [[UIButton alloc]initWithFrame:CGRectMake((self.view.bounds.size.width-80)*0.5, self.view.bounds.size.height-120, 100, 100)];
-    btn.backgroundColor = [UIColor redColor];
-    [btn setTitle:@"测试" forState:UIControlStateNormal];
-    
-    [self.view addSubview:btn];
-    [btn addTarget:self action:@selector(takePhoto) forControlEvents:UIControlEventTouchUpInside];
 }
 
--(void)addFiterCamera
+-(void)takePhoto
 {
-    //1.
-    //第一个参数表示相片的尺寸，第二个参数表示前、后摄像头 AVCaptureDevicePositionFront/AVCaptureDevicePositionBack
-    _mCamera = [[GPUImageStillCamera alloc] initWithSessionPreset:AVCaptureSessionPreset640x480 cameraPosition:AVCaptureDevicePositionFront];
+    GPUImageSketchFilter *filter = [[GPUImageSketchFilter alloc]init];
+//    [stillCamera addTarget:filter];
+//    [filter addTarget:_mGPUImgView];
+//    _mFilter = filter;
+    [self.magicCamera switchFilter:filter];
     
-    //2.切换摄像头
-    [_mCamera rotateCamera];
-    
-    //3.竖屏方向
-    _mCamera.outputImageOrientation = UIInterfaceOrientationPortrait;
-    
-    //4.设置滤镜对象
-    GPUImageiOSBlurFilter *filter = [[GPUImageiOSBlurFilter alloc] init];
-    
-    //5.
-    _mGPUImgView = [[GPUImageView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
-    _mGPUImgView.fillMode = kGPUImageFillModePreserveAspectRatioAndFill;
-    [_mCamera addTarget:filter];
-    [filter addTarget:_mGPUImgView];
-    [self.view addSubview:_mGPUImgView];
-    
-    [self performSelector:@selector(doSomething) withObject:self afterDelay:3.0];
-    
-}
-
-- (void)doSomething
-{
-    //6.
-    [_mCamera startCameraCapture];
-}
-
--(void)takePhoto{
-    
-    [stillCamera removeAllTargets];
-//    [grayFilter removeAllTargets];
-    GPUImageFilter *filter = [[GPUImageGrayscaleFilter alloc]init];
-    [stillCamera addTarget:filter];
-    [filter addTarget:_mGPUImgView];
-//    [stillCamera startCameraCapture];
-//    [filter notifyTargetsAboutNewOutputTexture];
-//    [self.mCamera notifyTargetsAboutNewOutputTexture];
 //    //7.将图片通过PhotoKit add 相册中
-//    [_mCamera capturePhotoAsJPEGProcessedUpToFilter:_mFilter withCompletionHandler:^(NSData *processedJPEG, NSError *error){
+//    [stillCamera capturePhotoAsJPEGProcessedUpToFilter:_mFilter withCompletionHandler:^(NSData *processedJPEG, NSError *error){
+//        UIImage * image = [UIImage imageWithData:processedJPEG];
+//
 //        [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
 //
 //            [[PHAssetCreationRequest creationRequestForAsset] addResourceWithType:PHAssetResourceTypePhoto data:processedJPEG options:nil];
@@ -103,48 +52,73 @@
 //        } completionHandler:^(BOOL success, NSError * _Nullable error) {
 //
 //        }];
-//        //获取拍摄的图片
-//        UIImage * image = [UIImage imageWithData:processedJPEG];
+//        [self->stillCamera stopCameraCapture];
 //    }];
-    
-
 }
 
 - (void)demo1
 {
-    //第一步：创建预览View 即必须的GPUImageView
-    self.mGPUImgView = [[GPUImageView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
-    _mGPUImgView.fillMode = kGPUImageFillModePreserveAspectRatioAndFill;
-    _mGPUImgView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    [self.view addSubview:_mGPUImgView];
-    //第二步：创建滤镜 即这里我们使用的 GPUImageSketchFilter(黑白反色)
-    GPUImageiOSBlurFilter *filter = [[GPUImageiOSBlurFilter alloc] init];
-//    grayFilter = [[GPUImageSketchFilter alloc] init];
-    //第三步：创建Camera 即我们要用到的GPUImageStillCamera
-    stillCamera = [[GPUImageStillCamera alloc] initWithSessionPreset:AVCaptureSessionPresetPhoto cameraPosition:AVCaptureDevicePositionFront];
-    stillCamera.horizontallyMirrorFrontFacingCamera = YES;
-    //设置相机方向
-    stillCamera.outputImageOrientation = UIInterfaceOrientationPortrait;
-    //第四步： addTarget 并开始处理startCameraCapture
-    [stillCamera addTarget:filter];
-    [filter addTarget:_mGPUImgView];
-    [stillCamera startCameraCapture]; // 开始捕获
 
+    self.magicCamera = [[ZZMagicCamera alloc]initWithFrame:self.view.bounds options:nil];
+    [self.view addSubview:self.magicCamera];
 }
 
 - (void)addTopBar
 {
+    CGRect topBarFrame;
     if(kIsBangsScreen){
-        
+        topBarFrame =  CGRectMake(0, 44, SCREEN_WIDTH, 44);
+    }else{
+        topBarFrame =  CGRectMake(0, 20, SCREEN_WIDTH, 44);
     }
-    CamraTopBar *cameraTopBar = [[CamraTopBar alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 44)];
+    CamraTopBar *cameraTopBar = [[CamraTopBar alloc]initWithFrame:topBarFrame];
     cameraTopBar.delegate = self;
     [self.view addSubview:cameraTopBar];
+    self.cameraTopBar = cameraTopBar;
+    
+    CameraBottomBar *bottomBar = [[CameraBottomBar alloc]initWithFrame:CGRectMake(0, SCREEN_HEIGHT - 80, SCREEN_WIDTH, 70)];
+    bottomBar.delegate = self;
+    [self.view addSubview:bottomBar];
+    self.cameraBottomBar = bottomBar;
 }
+
+#pragma mark - CamraTopBarDelegate
 - (void)camraTopBarItemDidSelected:(NSInteger)index
 {
-    [stillCamera stopCameraCapture];
     [self.navigationController popViewControllerAnimated:YES];
+}
+#pragma mark - CameraBottomBarDelegate
+- (void)cameraBottomBarItemSelected:(NSInteger)index
+{
+    switch (index) {
+        case 0:
+        {
+            
+        }
+            break;
+        case 1:
+        {
+            [self takePhoto];
+        }
+            break;
+        case 2:
+        {
+            ImageFilterViewController *imgFilterVC = [[ImageFilterViewController alloc]init];
+            imgFilterVC.modalPresentationStyle = UIModalPresentationCustom;
+            imgFilterVC.transitioningDelegate = self;
+            [self presentViewController:imgFilterVC animated:YES completion:nil];
+        }
+            break;
+        default:
+            break;
+    }
+}
+
+- (UIPresentationController *)presentationControllerForPresentedViewController:(UIViewController *)presented presentingViewController:(UIViewController *)presenting sourceViewController:(UIViewController *)source
+{
+    ZZPresentationController *presentationController = [[ZZPresentationController alloc]initWithPresentedViewController:presented presentingViewController:presenting];
+    presentationController.contentSize = CGSizeMake(SCREEN_WIDTH, 200);
+    return presentationController;
 }
 
 @end

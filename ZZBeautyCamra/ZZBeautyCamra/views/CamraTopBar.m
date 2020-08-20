@@ -13,7 +13,7 @@
 - (instancetype)initWithFrame:(CGRect)frame
 {
     if(self == [super initWithFrame:frame]){
-        self.backgroundColor = [UIColor whiteColor];
+//        self.backgroundColor = [UIColor whiteColor];
         [self loadUI];
     }
     return self;
@@ -24,6 +24,7 @@
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
     btn.frame = CGRectMake(15, 0, self.frame.size.height, self.frame.size.height);
     [btn setTitle:@"关闭" forState:UIControlStateNormal];
+    btn.backgroundColor = [UIColor systemPinkColor];
     btn.tag = 400;
     [btn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:btn];

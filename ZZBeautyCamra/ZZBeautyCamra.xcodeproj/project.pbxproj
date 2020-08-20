@@ -24,6 +24,13 @@
 		FF49A28C24EB7C5600FC60FC /* Preview.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FF49A28A24EB7C5600FC60FC /* Preview.jpg */; };
 		FF49A28F24EBE44800FC60FC /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF49A28E24EBE44800FC60FC /* MainViewController.m */; };
 		FF49A29424ED02ED00FC60FC /* CamraTopBar.m in Sources */ = {isa = PBXBuildFile; fileRef = FF49A29324ED02ED00FC60FC /* CamraTopBar.m */; };
+		FF49A29824EE25A900FC60FC /* CameraBottomBar.m in Sources */ = {isa = PBXBuildFile; fileRef = FF49A29724EE25A900FC60FC /* CameraBottomBar.m */; };
+		FF49A29C24EE4BDA00FC60FC /* ImageFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF49A29B24EE4BDA00FC60FC /* ImageFilterViewController.m */; };
+		FF49A29F24EE4C9300FC60FC /* ZZTransitionAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = FF49A29E24EE4C9300FC60FC /* ZZTransitionAnimation.m */; };
+		FF49A2A224EE54E700FC60FC /* UIViewController+ZZAnimationTransitioningSnapshot.m in Sources */ = {isa = PBXBuildFile; fileRef = FF49A2A124EE54E700FC60FC /* UIViewController+ZZAnimationTransitioningSnapshot.m */; };
+		FF49A2A524EE58E200FC60FC /* FilterListView.m in Sources */ = {isa = PBXBuildFile; fileRef = FF49A2A424EE58E200FC60FC /* FilterListView.m */; };
+		FF49A2A824EE604700FC60FC /* ZZPresentationController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF49A2A724EE604700FC60FC /* ZZPresentationController.m */; };
+		FF49A2AB24EE62DE00FC60FC /* ZZMagicCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = FF49A2AA24EE62DE00FC60FC /* ZZMagicCamera.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +87,20 @@
 		FF49A29224ED02ED00FC60FC /* CamraTopBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CamraTopBar.h; sourceTree = "<group>"; };
 		FF49A29324ED02ED00FC60FC /* CamraTopBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CamraTopBar.m; sourceTree = "<group>"; };
 		FF49A29524ED06F600FC60FC /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		FF49A29624EE25A900FC60FC /* CameraBottomBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CameraBottomBar.h; sourceTree = "<group>"; };
+		FF49A29724EE25A900FC60FC /* CameraBottomBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CameraBottomBar.m; sourceTree = "<group>"; };
+		FF49A29A24EE4BDA00FC60FC /* ImageFilterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageFilterViewController.h; sourceTree = "<group>"; };
+		FF49A29B24EE4BDA00FC60FC /* ImageFilterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageFilterViewController.m; sourceTree = "<group>"; };
+		FF49A29D24EE4C9300FC60FC /* ZZTransitionAnimation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZZTransitionAnimation.h; sourceTree = "<group>"; };
+		FF49A29E24EE4C9300FC60FC /* ZZTransitionAnimation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZZTransitionAnimation.m; sourceTree = "<group>"; };
+		FF49A2A024EE54E700FC60FC /* UIViewController+ZZAnimationTransitioningSnapshot.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ZZAnimationTransitioningSnapshot.h"; sourceTree = "<group>"; };
+		FF49A2A124EE54E700FC60FC /* UIViewController+ZZAnimationTransitioningSnapshot.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ZZAnimationTransitioningSnapshot.m"; sourceTree = "<group>"; };
+		FF49A2A324EE58E200FC60FC /* FilterListView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FilterListView.h; sourceTree = "<group>"; };
+		FF49A2A424EE58E200FC60FC /* FilterListView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FilterListView.m; sourceTree = "<group>"; };
+		FF49A2A624EE604700FC60FC /* ZZPresentationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZZPresentationController.h; sourceTree = "<group>"; };
+		FF49A2A724EE604700FC60FC /* ZZPresentationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZZPresentationController.m; sourceTree = "<group>"; };
+		FF49A2A924EE62DE00FC60FC /* ZZMagicCamera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZZMagicCamera.h; sourceTree = "<group>"; };
+		FF49A2AA24EE62DE00FC60FC /* ZZMagicCamera.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZZMagicCamera.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +179,7 @@
 		FF49A24824EB703B00FC60FC /* ZZBeautyCamra */ = {
 			isa = PBXGroup;
 			children = (
+				FF49A29924EE4BA700FC60FC /* Tool */,
 				FF49A29124ED02D900FC60FC /* views */,
 				FF49A29024EBE44F00FC60FC /* pages */,
 				FF49A24924EB703B00FC60FC /* AppDelegate.h */,
@@ -203,6 +225,8 @@
 				FF49A28E24EBE44800FC60FC /* MainViewController.m */,
 				F427E46824ECA1B800D2772C /* CamraViewController.h */,
 				F427E46924ECA1B800D2772C /* CamraViewController.m */,
+				FF49A29A24EE4BDA00FC60FC /* ImageFilterViewController.h */,
+				FF49A29B24EE4BDA00FC60FC /* ImageFilterViewController.m */,
 			);
 			path = pages;
 			sourceTree = "<group>";
@@ -212,8 +236,27 @@
 			children = (
 				FF49A29224ED02ED00FC60FC /* CamraTopBar.h */,
 				FF49A29324ED02ED00FC60FC /* CamraTopBar.m */,
+				FF49A29624EE25A900FC60FC /* CameraBottomBar.h */,
+				FF49A29724EE25A900FC60FC /* CameraBottomBar.m */,
+				FF49A2A324EE58E200FC60FC /* FilterListView.h */,
+				FF49A2A424EE58E200FC60FC /* FilterListView.m */,
 			);
 			path = views;
+			sourceTree = "<group>";
+		};
+		FF49A29924EE4BA700FC60FC /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				FF49A29D24EE4C9300FC60FC /* ZZTransitionAnimation.h */,
+				FF49A29E24EE4C9300FC60FC /* ZZTransitionAnimation.m */,
+				FF49A2A024EE54E700FC60FC /* UIViewController+ZZAnimationTransitioningSnapshot.h */,
+				FF49A2A124EE54E700FC60FC /* UIViewController+ZZAnimationTransitioningSnapshot.m */,
+				FF49A2A624EE604700FC60FC /* ZZPresentationController.h */,
+				FF49A2A724EE604700FC60FC /* ZZPresentationController.m */,
+				FF49A2A924EE62DE00FC60FC /* ZZMagicCamera.h */,
+				FF49A2AA24EE62DE00FC60FC /* ZZMagicCamera.m */,
+			);
+			path = Tool;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -457,12 +500,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF49A25124EB703B00FC60FC /* ViewController.m in Sources */,
+				FF49A2A224EE54E700FC60FC /* UIViewController+ZZAnimationTransitioningSnapshot.m in Sources */,
+				FF49A2A824EE604700FC60FC /* ZZPresentationController.m in Sources */,
 				FF49A29424ED02ED00FC60FC /* CamraTopBar.m in Sources */,
+				FF49A2AB24EE62DE00FC60FC /* ZZMagicCamera.m in Sources */,
 				F427E46A24ECA1B800D2772C /* CamraViewController.m in Sources */,
 				FF49A24B24EB703B00FC60FC /* AppDelegate.m in Sources */,
+				FF49A29C24EE4BDA00FC60FC /* ImageFilterViewController.m in Sources */,
+				FF49A29F24EE4C9300FC60FC /* ZZTransitionAnimation.m in Sources */,
 				FF49A25C24EB704200FC60FC /* main.m in Sources */,
+				FF49A2A524EE58E200FC60FC /* FilterListView.m in Sources */,
 				FF49A28F24EBE44800FC60FC /* MainViewController.m in Sources */,
 				FF49A24E24EB703B00FC60FC /* SceneDelegate.m in Sources */,
+				FF49A29824EE25A900FC60FC /* CameraBottomBar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
