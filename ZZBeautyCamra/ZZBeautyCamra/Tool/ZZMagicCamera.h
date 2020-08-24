@@ -18,6 +18,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)switchFilter:(id<GPUImageInput>)filter;
 
+- (void)switchCamera;
+
+- (void)destroy;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -23,19 +23,21 @@
     //拍摄按钮
     UIButton *captureButton = [UIButton buttonWithType:UIButtonTypeCustom];
     captureButton.frame = CGRectMake(self.frame.size.width/2-self.frame.size.height/2, 0, self.frame.size.height, self.frame.size.height);
-    captureButton.backgroundColor = [UIColor systemTealColor];
+    captureButton.backgroundColor = ThemeColor;
+    captureButton.layer.cornerRadius = self.frame.size.height/2;
     [captureButton addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:captureButton];
     captureButton.tag = 401;
     
-    float margin = 5;
-    float between = 15;
+    float margin = 15;
+    float between = 20;
     float btnSize = self.frame.size.height - margin * 2;
     CGRect captureBtnFrame = captureButton.frame;
     //美颜
     UIButton *beautyFaceButton = [UIButton buttonWithType:UIButtonTypeCustom];
     beautyFaceButton.frame = CGRectMake(captureBtnFrame.origin.x - between - btnSize, margin, btnSize, btnSize);
-    beautyFaceButton.backgroundColor = [UIColor systemTealColor];
+//    beautyFaceButton.backgroundColor = [UIColor systemTealColor];
+    [beautyFaceButton setImage:[UIImage imageNamed:@"beauty_icon"] forState:UIControlStateNormal];
     [beautyFaceButton addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:beautyFaceButton];
     beautyFaceButton.tag = 400;
@@ -43,7 +45,8 @@
     //滤镜
     UIButton *filterButton = [UIButton buttonWithType:UIButtonTypeCustom];
     filterButton.frame = CGRectMake(captureBtnFrame.origin.x + captureBtnFrame.size.width + between, margin, btnSize, btnSize);
-    filterButton.backgroundColor = [UIColor systemTealColor];
+//    filterButton.backgroundColor = [UIColor systemTealColor];
+    [filterButton setImage:[UIImage imageNamed:@"filter_icon"] forState:UIControlStateNormal];
     [filterButton addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:filterButton];
     filterButton.tag = 402;

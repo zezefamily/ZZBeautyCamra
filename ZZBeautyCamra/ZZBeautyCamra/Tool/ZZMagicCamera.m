@@ -33,7 +33,7 @@
     _captrueView.fillMode = kGPUImageFillModePreserveAspectRatioAndFill;
     _captrueView.autoresizingMask = UIViewAutoresizingFlexibleWidth |UIViewAutoresizingFlexibleHeight;
     [self addSubview:_captrueView];
-    GPUImageiOSBlurFilter *filter = [[GPUImageiOSBlurFilter alloc] init];
+    GPUImageFilter *filter = [[GPUImageFilter alloc] init];
 //    GPUImageExposureFilter *filter = [[GPUImageExposureFilter alloc]init];
     self.stillCamera = [[GPUImageStillCamera alloc] initWithSessionPreset:AVCaptureSessionPresetMedium cameraPosition:AVCaptureDevicePositionFront];
     _stillCamera.horizontallyMirrorFrontFacingCamera = YES; //前置镜像
@@ -66,5 +66,15 @@
 //        }];
 //        [self->stillCamera stopCameraCapture];
 //    }];
+
+- (void)switchCamera
+{
+    [self.stillCamera rotateCamera];
+}
+
+- (void)destroy
+{
+    [self.stillCamera stopCameraCapture];
+}
 
 @end

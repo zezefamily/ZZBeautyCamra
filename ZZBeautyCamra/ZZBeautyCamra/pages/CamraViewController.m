@@ -6,6 +6,8 @@
 //  Created by wenmei on 2020/8/19.
 //  Copyright © 2020 泽泽. All rights reserved.
 //
+#define Content_Size CGSizeMake(SCREEN_WIDTH, 220)
+
 
 #import "CamraViewController.h"
 #import "GPUImage.h"
@@ -29,7 +31,7 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
     self.navigationController.delegate = self;
-    [self demo1];
+    [self addFilterCamera];
     [self addTopBar];
 }
 
@@ -56,7 +58,7 @@
 //    }];
 }
 
-- (void)demo1
+- (void)addFilterCamera
 {
 
     self.magicCamera = [[ZZMagicCamera alloc]initWithFrame:self.view.bounds options:nil];
@@ -67,16 +69,16 @@
 {
     CGRect topBarFrame;
     if(kIsBangsScreen){
-        topBarFrame =  CGRectMake(0, 44, SCREEN_WIDTH, 44);
+        topBarFrame =  CGRectMake(0, 44, SCREEN_WIDTH, 40);
     }else{
-        topBarFrame =  CGRectMake(0, 20, SCREEN_WIDTH, 44);
+        topBarFrame =  CGRectMake(0, 20, SCREEN_WIDTH, 40);
     }
     CamraTopBar *cameraTopBar = [[CamraTopBar alloc]initWithFrame:topBarFrame];
     cameraTopBar.delegate = self;
     [self.view addSubview:cameraTopBar];
     self.cameraTopBar = cameraTopBar;
     
-    CameraBottomBar *bottomBar = [[CameraBottomBar alloc]initWithFrame:CGRectMake(0, SCREEN_HEIGHT - 80, SCREEN_WIDTH, 70)];
+    CameraBottomBar *bottomBar = [[CameraBottomBar alloc]initWithFrame:CGRectMake(0, SCREEN_HEIGHT - 85, SCREEN_WIDTH, 60)];
     bottomBar.delegate = self;
     [self.view addSubview:bottomBar];
     self.cameraBottomBar = bottomBar;
@@ -85,7 +87,13 @@
 #pragma mark - CamraTopBarDelegate
 - (void)camraTopBarItemDidSelected:(NSInteger)index
 {
-    [self.navigationController popViewControllerAnimated:YES];
+    if(index == 0){
+        [self.magicCamera destroy];
+        [self.navigationController popViewControllerAnimated:YES];
+    }else if (index == 1){
+        [self.magicCamera switchCamera];
+    }
+    
 }
 #pragma mark - CameraBottomBarDelegate
 - (void)cameraBottomBarItemSelected:(NSInteger)index
@@ -106,6 +114,7 @@
             ImageFilterViewController *imgFilterVC = [[ImageFilterViewController alloc]init];
             imgFilterVC.modalPresentationStyle = UIModalPresentationCustom;
             imgFilterVC.transitioningDelegate = self;
+            imgFilterVC.contentSize = Content_Size;
             [self presentViewController:imgFilterVC animated:YES completion:nil];
         }
             break;
@@ -117,7 +126,7 @@
 - (UIPresentationController *)presentationControllerForPresentedViewController:(UIViewController *)presented presentingViewController:(UIViewController *)presenting sourceViewController:(UIViewController *)source
 {
     ZZPresentationController *presentationController = [[ZZPresentationController alloc]initWithPresentedViewController:presented presentingViewController:presenting];
-    presentationController.contentSize = CGSizeMake(SCREEN_WIDTH, 200);
+    presentationController.contentSize = Content_Size;
     return presentationController;
 }
 

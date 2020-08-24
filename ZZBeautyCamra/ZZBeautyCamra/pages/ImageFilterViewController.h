@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ImageFilterViewController : UIViewController
 
+@property (nonatomic,assign) CGSize contentSize;
+
 @end
 
 NS_ASSUME_NONNULL_END

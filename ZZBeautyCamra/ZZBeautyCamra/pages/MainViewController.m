@@ -36,12 +36,14 @@
     //相机
     UIButton *camraBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     camraBtn.frame = CGRectMake(self.view.frame.size.width/2 - 40, contentView.frame.size.height - 80 - 15, 80, 80);
-    camraBtn.backgroundColor = [UIColor systemGreenColor];
+    camraBtn.backgroundColor = ThemeColor;
+    [camraBtn setImage:[UIImage imageNamed:@"camera_icon"] forState:UIControlStateNormal];
+    camraBtn.layer.cornerRadius = 40;
     [camraBtn addTarget:self action:@selector(camraClick) forControlEvents:UIControlEventTouchUpInside];
     [contentView addSubview:camraBtn];
     //菜单
     UIView *menuView = [[UIView alloc]initWithFrame:CGRectMake(15, 15, contentView.frame.size.width - 30, contentView.frame.size.height - 15 - 80 - 30)];
-    menuView.backgroundColor = [UIColor systemPinkColor];
+//    menuView.backgroundColor = [UIColor systemPinkColor];
     [contentView addSubview:menuView];
     
     float margin = 15;
@@ -51,7 +53,7 @@
     for(int i = 0;i<4;i++){
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
         btn.frame = CGRectMake(i%colum * (width + margin), (height+margin)*(i / colum), width, height);
-        btn.backgroundColor = [UIColor systemBlueColor];
+        btn.backgroundColor = [UIColor colorWithRed:0.91f green:0.51f blue:0.91f alpha:1.00f];;
         btn.layer.cornerRadius = 15.0f;
         [btn setTitle:@[@"图片精修",@"视频滤镜",@"构建中",@"构建中"][i] forState:UIControlStateNormal];
         [btn addTarget:self action:@selector(menuClick:) forControlEvents:UIControlEventTouchUpInside];

@@ -12,11 +12,11 @@
 
 - (void)presentationTransitionWillBegin
 {
-    NSLog(@"presentationTransitionWillBegin");
+//    NSLog(@"presentationTransitionWillBegin");
 }
 - (void)presentationTransitionDidEnd:(BOOL)completed
 {
-    NSLog(@"presentationTransitionDidEnd:%d",completed);
+//    NSLog(@"presentationTransitionDidEnd:%d",completed);
 }
 
 - (CGRect)frameOfPresentedViewInContainerView
@@ -26,11 +26,11 @@
 
 - (void)dismissalTransitionWillBegin
 {
-    NSLog(@"dismissalTransitionWillBegin");
+//    NSLog(@"dismissalTransitionWillBegin");
 }
 - (void)dismissalTransitionDidEnd:(BOOL)completed
 {
-    NSLog(@"dismissalTransitionDidEnd:%d",completed);
+//    NSLog(@"dismissalTransitionDidEnd:%d",completed);
 }
 
 @end

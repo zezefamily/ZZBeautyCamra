@@ -11,6 +11,7 @@
 		D7FBBDDC24C8DEF3B9436744 /* Pods_ZZBeautyCamraTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AE7EFE106EF5E02D6ACBCCB /* Pods_ZZBeautyCamraTests.framework */; };
 		F39C26DF28CD48C14BC692C8 /* Pods_ZZBeautyCamra_ZZBeautyCamraUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A9F247B359ED37F9BC75351 /* Pods_ZZBeautyCamra_ZZBeautyCamraUITests.framework */; };
 		F427E46A24ECA1B800D2772C /* CamraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F427E46924ECA1B800D2772C /* CamraViewController.m */; };
+		F427E4A124EECA3700D2772C /* FilterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F427E4A024EECA3700D2772C /* FilterCell.m */; };
 		FF49A24B24EB703B00FC60FC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FF49A24A24EB703B00FC60FC /* AppDelegate.m */; };
 		FF49A24E24EB703B00FC60FC /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FF49A24D24EB703B00FC60FC /* SceneDelegate.m */; };
 		FF49A25124EB703B00FC60FC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF49A25024EB703B00FC60FC /* ViewController.m */; };
@@ -62,6 +63,8 @@
 		AE7CD43DAEE40D6FE891B90A /* Pods-ZZBeautyCamra.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZZBeautyCamra.release.xcconfig"; path = "Target Support Files/Pods-ZZBeautyCamra/Pods-ZZBeautyCamra.release.xcconfig"; sourceTree = "<group>"; };
 		F427E46824ECA1B800D2772C /* CamraViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CamraViewController.h; sourceTree = "<group>"; };
 		F427E46924ECA1B800D2772C /* CamraViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CamraViewController.m; sourceTree = "<group>"; };
+		F427E49F24EECA3700D2772C /* FilterCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FilterCell.h; sourceTree = "<group>"; };
+		F427E4A024EECA3700D2772C /* FilterCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FilterCell.m; sourceTree = "<group>"; };
 		FF49A24624EB703B00FC60FC /* ZZBeautyCamra.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZZBeautyCamra.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF49A24924EB703B00FC60FC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FF49A24A24EB703B00FC60FC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -154,6 +157,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F427E49E24EECA1200D2772C /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				F427E49F24EECA3700D2772C /* FilterCell.h */,
+				F427E4A024EECA3700D2772C /* FilterCell.m */,
+			);
+			path = cells;
+			sourceTree = "<group>";
+		};
 		FF49A23D24EB703A00FC60FC = {
 			isa = PBXGroup;
 			children = (
@@ -234,6 +246,7 @@
 		FF49A29124ED02D900FC60FC /* views */ = {
 			isa = PBXGroup;
 			children = (
+				F427E49E24EECA1200D2772C /* cells */,
 				FF49A29224ED02ED00FC60FC /* CamraTopBar.h */,
 				FF49A29324ED02ED00FC60FC /* CamraTopBar.m */,
 				FF49A29624EE25A900FC60FC /* CameraBottomBar.h */,
@@ -500,6 +513,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF49A25124EB703B00FC60FC /* ViewController.m in Sources */,
+				F427E4A124EECA3700D2772C /* FilterCell.m in Sources */,
 				FF49A2A224EE54E700FC60FC /* UIViewController+ZZAnimationTransitioningSnapshot.m in Sources */,
 				FF49A2A824EE604700FC60FC /* ZZPresentationController.m in Sources */,
 				FF49A29424ED02ED00FC60FC /* CamraTopBar.m in Sources */,
