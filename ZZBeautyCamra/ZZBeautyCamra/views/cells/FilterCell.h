@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface FilterCell : UICollectionViewCell
 
+- (void)addFilter:(GPUImageOutput<GPUImageInput> *)filter inputImage:(UIImage *)inputImage;
+
 @end
 
 NS_ASSUME_NONNULL_END

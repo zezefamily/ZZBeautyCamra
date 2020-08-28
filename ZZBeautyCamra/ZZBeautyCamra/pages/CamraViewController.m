@@ -18,7 +18,7 @@
 #import "ImageFilterViewController.h"
 #import "ZZMagicCamera.h"
 
-@interface CamraViewController ()<CamraTopBarDelegate,CameraBottomBarDelegate,UINavigationControllerDelegate,UIViewControllerTransitioningDelegate>
+@interface CamraViewController ()<CamraTopBarDelegate,CameraBottomBarDelegate,UINavigationControllerDelegate,UIViewControllerTransitioningDelegate,ImageFilterViewControllerDelegate>
 @property (nonatomic,strong) ZZMagicCamera *magicCamera;
 @property (nonatomic,strong) CamraTopBar *cameraTopBar;
 @property (nonatomic,strong) CameraBottomBar *cameraBottomBar;
@@ -33,6 +33,13 @@
     self.navigationController.delegate = self;
     [self addFilterCamera];
     [self addTopBar];
+}
+
+
+#pragma mark - ImageFilterViewControllerDelegate
+- (void)imageFilterVCUpdateFilter:(GPUImageOutput<GPUImageInput> *)filter
+{
+    [self.magicCamera switchFilter:filter];
 }
 
 -(void)takePhoto
@@ -60,8 +67,7 @@
 
 - (void)addFilterCamera
 {
-
-    self.magicCamera = [[ZZMagicCamera alloc]initWithFrame:self.view.bounds options:nil];
+    self.magicCamera = [[ZZMagicCamera alloc]initWithFrame:self.view.bounds options:@{}];
     [self.view addSubview:self.magicCamera];
 }
 
@@ -115,6 +121,7 @@
             imgFilterVC.modalPresentationStyle = UIModalPresentationCustom;
             imgFilterVC.transitioningDelegate = self;
             imgFilterVC.contentSize = Content_Size;
+            imgFilterVC.delegate = self;
             [self presentViewController:imgFilterVC animated:YES completion:nil];
         }
             break;

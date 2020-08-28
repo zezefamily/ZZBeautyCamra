@@ -10,7 +10,15 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@protocol ImageFilterViewControllerDelegate <NSObject>
+
+- (void)imageFilterVCUpdateFilter:(GPUImageOutput<GPUImageInput> *)filter;
+
+@end
+
 @interface ImageFilterViewController : UIViewController
+
+@property (nonatomic,assign) id<ImageFilterViewControllerDelegate> delegate;
 
 @property (nonatomic,assign) CGSize contentSize;
 

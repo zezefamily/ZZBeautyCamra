@@ -8,7 +8,8 @@
 
 #import "ImageFilterViewController.h"
 #import "FilterListView.h"
-@interface ImageFilterViewController ()
+
+@interface ImageFilterViewController ()<FilterListViewDelegate>
 {
     UIView *btnsView;
     UIView *selectView;
@@ -29,6 +30,34 @@
     [self addButtons];
     [self addListView];
     [self addBottomItems];
+    [self loadFilters];
+}
+
+- (void)loadFilters
+{
+    GPUImageFilterGroup *filterGroup = [[GPUImageFilterGroup alloc]init];
+    [filterGroup addFilter:[[GPUImageFilter alloc]init]];  //无
+    [filterGroup addFilter:[[GPUImageSketchFilter alloc]init]]; //素描
+    [filterGroup addFilter:[[GPUImageSepiaFilter alloc]init]];  //复古
+    GPUImageBrightnessFilter *brightnessFilter = [[GPUImageBrightnessFilter alloc]init];
+    brightnessFilter.brightness = 0.5;
+    [filterGroup addFilter:brightnessFilter]; //亮度
+    GPUImageContrastFilter *contrastFilter = [[GPUImageContrastFilter alloc]init];
+    contrastFilter.contrast = 3.0;
+    [filterGroup addFilter:contrastFilter]; //对比度
+    [filterGroup addFilter:[[GPUImageCropFilter alloc]initWithCropRegion:CGRectMake(0.25, 0.25, 0.25, 0.25)]];    // 裁剪
+    [filterGroup addFilter:[[GPUImageCrosshatchFilter alloc]init]]; // 交叉影线
+    [filterGroup addFilter:[[GPUImageDilationFilter alloc]initWithRadius:3]];
+    [filterGroup addFilter:[[GPUImageDirectionalNonMaximumSuppressionFilter alloc]init]];
+    [filterGroup addFilter:[[GPUImageColorPackingFilter alloc]init]];
+    [filterGroup addFilter:[[GPUImageVignetteFilter alloc]init]]; //周围阴影
+    [filterGroup addFilter:[[TwoSplitScreenFilter alloc]init]];  //二分屏
+    [filterGroup addFilter:[[ThreeSplitScreenFilter alloc]init]]; //三分屏
+    [filterGroup addFilter:[[FourSplitScreenFilter alloc]init]]; //四分屏
+    [filterGroup addFilter:[[SixSplitScreenFilter alloc]init]]; //六分屏
+    [filterGroup addFilter:[[NineSplitScreenFilter alloc]init]]; //九分屏
+    //GPUImageVignetteFilter
+    [_listView loadListWithGPUImageFilterGroup:filterGroup];
 }
 
 - (void)addBottomItems
@@ -41,10 +70,19 @@
     [bottomView addSubview:cameraBtn];
 }
 
+#pragma mark - FilterListViewDelegate
+- (void)filterListViewDidSelectedFilter:(GPUImageOutput<GPUImageInput> *)filter
+{
+    if([self.delegate respondsToSelector:@selector(imageFilterVCUpdateFilter:)]){
+        [self.delegate imageFilterVCUpdateFilter:filter];
+    }
+}
+
 - (void)addListView
 {
     _listView = [[FilterListView alloc]initWithFrame:CGRectMake(0, 0, selectView.frame.size.width, selectView.frame.size.height)];
     [selectView addSubview:_listView];
+    _listView.delegate = self;
 }
 - (void)addButtons
 {

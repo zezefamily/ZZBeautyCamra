@@ -7,10 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
-
 NS_ASSUME_NONNULL_BEGIN
 
+@protocol FilterListViewDelegate <NSObject>
+
+- (void)filterListViewDidSelectedFilter:(GPUImageOutput<GPUImageInput> *)filter;
+
+@end
+
 @interface FilterListView : UIView
+
+@property (nonatomic,weak) id<FilterListViewDelegate> delegate;
+
+- (void)loadListWithGPUImageFilterGroup:(GPUImageFilterGroup *)filterGroup;
 
 @end
 

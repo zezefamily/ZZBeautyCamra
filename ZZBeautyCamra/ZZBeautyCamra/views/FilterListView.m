@@ -9,6 +9,11 @@
 #import "FilterListView.h"
 #import "FilterCell.h"
 @interface FilterListView ()<UICollectionViewDelegateFlowLayout,UICollectionViewDelegate,UICollectionViewDataSource>
+{
+    UIImage *_currentInputImg;
+    GPUImageSketchFilter *sketchFilter;
+    GPUImageFilterGroup *_filterGroup;
+}
 @property (nonatomic,strong) UICollectionView *collectionView;
 @end
 @implementation FilterListView
@@ -23,6 +28,8 @@
 
 - (void)loadUI
 {
+    _currentInputImg = [UIImage imageNamed:@"17"];
+    sketchFilter = [[GPUImageSketchFilter alloc]init];
     [self addSubview:self.collectionView];
 }
 - (UICollectionView *)collectionView
@@ -44,7 +51,7 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 15;
+    return _filterGroup.filterCount;
 }
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -53,6 +60,7 @@
         CGSize size = CGSizeMake(self.frame.size.height - 20, self.frame.size.height);
         cell = [[FilterCell alloc]initWithFrame:CGRectMake(0, 0, size.width, size.height)];
     }
+    [cell addFilter:[_filterGroup filterAtIndex:indexPath.row] inputImage:_currentInputImg];
     return cell;
 }
 
@@ -64,6 +72,15 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     NSLog(@"collectionView:didSelectItemAtIndexPath:");
+    if([self.delegate respondsToSelector:@selector(filterListViewDidSelectedFilter:)]){
+        [self.delegate filterListViewDidSelectedFilter:[_filterGroup filterAtIndex:indexPath.row]];
+    }
+}
+
+- (void)loadListWithGPUImageFilterGroup:(GPUImageFilterGroup *)filterGroup
+{
+    _filterGroup = filterGroup;
+    [self.collectionView reloadData];
 }
 
 @end
