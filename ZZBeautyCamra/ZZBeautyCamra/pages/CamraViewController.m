@@ -105,17 +105,17 @@
 - (void)cameraBottomBarItemSelected:(NSInteger)index
 {
     switch (index) {
-        case 0:
+        case 0: //美颜开关
         {
             
         }
             break;
-        case 1:
+        case 1: //拍照
         {
             [self takePhoto];
         }
             break;
-        case 2:
+        case 2: //滤镜
         {
             ImageFilterViewController *imgFilterVC = [[ImageFilterViewController alloc]init];
             imgFilterVC.modalPresentationStyle = UIModalPresentationCustom;
