@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Default</key>
+	<array>
+		<dict>
+			<key>filter_id</key>
+			<string>twoSplit</string>
+			<key>filter_name</key>
+			<string>二分屏</string>
+			<key>filter_class</key>
+			<string>TwoSplitScreenFilter</string>
+		</dict>
+		<dict>
+			<key>filter_id</key>
+			<string>threeSplit</string>
+			<key>filter_name</key>
+			<string>三分屏</string>
+			<key>filter_class</key>
+			<string>ThreeSplitScreenFilter</string>
+		</dict>
+		<dict>
+			<key>filter_id</key>
+			<string>fourSplit</string>
+			<key>filter_name</key>
+			<string>四分屏</string>
+			<key>filter_class</key>
+			<string>FourSplitScreenFilter</string>
+		</dict>
+		<dict>
+			<key>filter_id</key>
+			<string>sixSplit</string>
+			<key>filter_name</key>
+			<string>六分屏</string>
+			<key>filter_class</key>
+			<string>SixSplitScreenFilter</string>
+		</dict>
+		<dict>
+			<key>filter_id</key>
+			<string>nineSplit</string>
+			<key>filter_name</key>
+			<string>九分屏</string>
+			<key>filter_class</key>
+			<string>NineSplitScreenFilter</string>
+		</dict>
+	</array>
+</dict>
+</plist>

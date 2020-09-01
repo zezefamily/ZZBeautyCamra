@@ -39,8 +39,11 @@
 		FFF41C5D24F8FBA00053AD86 /* FourSplitScreenFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = FFF41C5C24F8FBA00053AD86 /* FourSplitScreenFilter.m */; };
 		FFF41C6024F8FBB30053AD86 /* SixSplitScreenFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = FFF41C5F24F8FBB30053AD86 /* SixSplitScreenFilter.m */; };
 		FFF41CB024FDF3A10053AD86 /* DefaultFilterMaterials.plist in Resources */ = {isa = PBXBuildFile; fileRef = FFF41CAF24FDF3A10053AD86 /* DefaultFilterMaterials.plist */; };
-		FFF41CB224FDF94B0053AD86 /* DefineFilterMaterials.plist in Resources */ = {isa = PBXBuildFile; fileRef = FFF41CB124FDF94A0053AD86 /* DefineFilterMaterials.plist */; };
+		FFF41CB224FDF94B0053AD86 /* CustomFilterMaterials.plist in Resources */ = {isa = PBXBuildFile; fileRef = FFF41CB124FDF94A0053AD86 /* CustomFilterMaterials.plist */; };
 		FFF41CB524FDFA000053AD86 /* ZZBeautyFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = FFF41CB424FDFA000053AD86 /* ZZBeautyFilter.m */; };
+		FFF41CB924FE2BAA0053AD86 /* FilterHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = FFF41CB824FE2BAA0053AD86 /* FilterHelper.m */; };
+		FFF41CBC24FE2D150053AD86 /* ZZFilterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FFF41CBB24FE2D150053AD86 /* ZZFilterManager.m */; };
+		FFF41CBF24FE2D310053AD86 /* ZZFilterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FFF41CBE24FE2D310053AD86 /* ZZFilterModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,9 +129,15 @@
 		FFF41C5F24F8FBB30053AD86 /* SixSplitScreenFilter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SixSplitScreenFilter.m; sourceTree = "<group>"; };
 		FFF41C6124F901070053AD86 /* CustomFilters.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomFilters.h; sourceTree = "<group>"; };
 		FFF41CAF24FDF3A10053AD86 /* DefaultFilterMaterials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DefaultFilterMaterials.plist; sourceTree = "<group>"; };
-		FFF41CB124FDF94A0053AD86 /* DefineFilterMaterials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DefineFilterMaterials.plist; sourceTree = "<group>"; };
+		FFF41CB124FDF94A0053AD86 /* CustomFilterMaterials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CustomFilterMaterials.plist; sourceTree = "<group>"; };
 		FFF41CB324FDFA000053AD86 /* ZZBeautyFilter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZZBeautyFilter.h; sourceTree = "<group>"; };
 		FFF41CB424FDFA000053AD86 /* ZZBeautyFilter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZZBeautyFilter.m; sourceTree = "<group>"; };
+		FFF41CB724FE2BAA0053AD86 /* FilterHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FilterHelper.h; sourceTree = "<group>"; };
+		FFF41CB824FE2BAA0053AD86 /* FilterHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FilterHelper.m; sourceTree = "<group>"; };
+		FFF41CBA24FE2D150053AD86 /* ZZFilterManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZZFilterManager.h; sourceTree = "<group>"; };
+		FFF41CBB24FE2D150053AD86 /* ZZFilterManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZZFilterManager.m; sourceTree = "<group>"; };
+		FFF41CBD24FE2D310053AD86 /* ZZFilterModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZZFilterModel.h; sourceTree = "<group>"; };
+		FFF41CBE24FE2D310053AD86 /* ZZFilterModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZZFilterModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -301,7 +310,8 @@
 		FFF41C4524F8DF2C0053AD86 /* filters */ = {
 			isa = PBXGroup;
 			children = (
-				FFF41CB124FDF94A0053AD86 /* DefineFilterMaterials.plist */,
+				FFF41CB624FE2B970053AD86 /* FilterHelper */,
+				FFF41CB124FDF94A0053AD86 /* CustomFilterMaterials.plist */,
 				FFF41CAF24FDF3A10053AD86 /* DefaultFilterMaterials.plist */,
 				FFF41C4824F8E3420053AD86 /* customFilters */,
 				FFF41C4624F8DF520053AD86 /* filterList.plist */,
@@ -327,6 +337,19 @@
 				FFF41CB424FDFA000053AD86 /* ZZBeautyFilter.m */,
 			);
 			path = customFilters;
+			sourceTree = "<group>";
+		};
+		FFF41CB624FE2B970053AD86 /* FilterHelper */ = {
+			isa = PBXGroup;
+			children = (
+				FFF41CB724FE2BAA0053AD86 /* FilterHelper.h */,
+				FFF41CB824FE2BAA0053AD86 /* FilterHelper.m */,
+				FFF41CBA24FE2D150053AD86 /* ZZFilterManager.h */,
+				FFF41CBB24FE2D150053AD86 /* ZZFilterManager.m */,
+				FFF41CBD24FE2D310053AD86 /* ZZFilterModel.h */,
+				FFF41CBE24FE2D310053AD86 /* ZZFilterModel.m */,
+			);
+			path = FilterHelper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -437,7 +460,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FFF41CB224FDF94B0053AD86 /* DefineFilterMaterials.plist in Resources */,
+				FFF41CB224FDF94B0053AD86 /* CustomFilterMaterials.plist in Resources */,
 				FF49A28C24EB7C5600FC60FC /* Preview.jpg in Resources */,
 				FF49A25924EB704200FC60FC /* LaunchScreen.storyboard in Resources */,
 				FFF41C4724F8DF520053AD86 /* filterList.plist in Resources */,
@@ -575,6 +598,7 @@
 				FF49A25124EB703B00FC60FC /* ViewController.m in Sources */,
 				FFF41C5A24F8FB8B0053AD86 /* TwoSplitScreenFilter.m in Sources */,
 				FFF41C6024F8FBB30053AD86 /* SixSplitScreenFilter.m in Sources */,
+				FFF41CB924FE2BAA0053AD86 /* FilterHelper.m in Sources */,
 				FFF41C5724F8FB5F0053AD86 /* NineSplitScreenFilter.m in Sources */,
 				F427E4A124EECA3700D2772C /* FilterCell.m in Sources */,
 				FF49A2A224EE54E700FC60FC /* UIViewController+ZZAnimationTransitioningSnapshot.m in Sources */,
@@ -583,6 +607,7 @@
 				FF49A2AB24EE62DE00FC60FC /* ZZMagicCamera.m in Sources */,
 				FFF41C5D24F8FBA00053AD86 /* FourSplitScreenFilter.m in Sources */,
 				F427E46A24ECA1B800D2772C /* CamraViewController.m in Sources */,
+				FFF41CBC24FE2D150053AD86 /* ZZFilterManager.m in Sources */,
 				FF49A24B24EB703B00FC60FC /* AppDelegate.m in Sources */,
 				FF49A29C24EE4BDA00FC60FC /* ImageFilterViewController.m in Sources */,
 				FF49A29F24EE4C9300FC60FC /* ZZTransitionAnimation.m in Sources */,
@@ -591,6 +616,7 @@
 				FF49A28F24EBE44800FC60FC /* MainViewController.m in Sources */,
 				FF49A24E24EB703B00FC60FC /* SceneDelegate.m in Sources */,
 				FFF41CB524FDFA000053AD86 /* ZZBeautyFilter.m in Sources */,
+				FFF41CBF24FE2D310053AD86 /* ZZFilterModel.m in Sources */,
 				FFF41C4E24F8FB250053AD86 /* ThreeSplitScreenFilter.m in Sources */,
 				FF49A29824EE25A900FC60FC /* CameraBottomBar.m in Sources */,
 			);

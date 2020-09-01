@@ -17,6 +17,8 @@
     FilterListView *_listView;
     UIButton *_normalFilterBtn;
     UIButton *_customFilterBtn;
+    
+    NSArray *_filterArray;
 }
 @end
 
@@ -35,29 +37,39 @@
 
 - (void)loadFilters
 {
-    GPUImageFilterGroup *filterGroup = [[GPUImageFilterGroup alloc]init];
-    [filterGroup addFilter:[[GPUImageFilter alloc]init]];  //无
-    [filterGroup addFilter:[[GPUImageSketchFilter alloc]init]]; //素描
-    [filterGroup addFilter:[[GPUImageSepiaFilter alloc]init]];  //复古
-    GPUImageBrightnessFilter *brightnessFilter = [[GPUImageBrightnessFilter alloc]init];
-    brightnessFilter.brightness = 0.5;
-    [filterGroup addFilter:brightnessFilter]; //亮度
-    GPUImageContrastFilter *contrastFilter = [[GPUImageContrastFilter alloc]init];
-    contrastFilter.contrast = 3.0;
-    [filterGroup addFilter:contrastFilter]; //对比度
-    [filterGroup addFilter:[[GPUImageCropFilter alloc]initWithCropRegion:CGRectMake(0.25, 0.25, 0.25, 0.25)]];    // 裁剪
-    [filterGroup addFilter:[[GPUImageCrosshatchFilter alloc]init]]; // 交叉影线
-    [filterGroup addFilter:[[GPUImageDilationFilter alloc]initWithRadius:3]];
-    [filterGroup addFilter:[[GPUImageDirectionalNonMaximumSuppressionFilter alloc]init]];
-    [filterGroup addFilter:[[GPUImageColorPackingFilter alloc]init]];
-    [filterGroup addFilter:[[GPUImageVignetteFilter alloc]init]]; //周围阴影
-    [filterGroup addFilter:[[TwoSplitScreenFilter alloc]init]];  //二分屏
-    [filterGroup addFilter:[[ThreeSplitScreenFilter alloc]init]]; //三分屏
-    [filterGroup addFilter:[[FourSplitScreenFilter alloc]init]]; //四分屏
-    [filterGroup addFilter:[[SixSplitScreenFilter alloc]init]]; //六分屏
-    [filterGroup addFilter:[[NineSplitScreenFilter alloc]init]]; //九分屏
+    
+    _filterArray = [ZZFilterManager shareManager].defaultFilters;
+    _listView.itemList = _filterArray;
+    
+//    GPUImageFilterGroup *filterGroup = [[GPUImageFilterGroup alloc]init];
+//    [filterGroup addFilter:[[GPUImageFilter alloc]init]];  //无
+//    [filterGroup addFilter:[[GPUImageSketchFilter alloc]init]]; //素描
+//    [filterGroup addFilter:[[GPUImageSepiaFilter alloc]init]];  //复古
+//    GPUImageBrightnessFilter *brightnessFilter = [[GPUImageBrightnessFilter alloc]init];
+//    brightnessFilter.brightness = 0.5;
+//    [filterGroup addFilter:brightnessFilter]; //亮度
+//    GPUImageContrastFilter *contrastFilter = [[GPUImageContrastFilter alloc]init];
+//    contrastFilter.contrast = 3.0;
+//    [filterGroup addFilter:contrastFilter]; //对比度
+//    [filterGroup addFilter:[[GPUImageCropFilter alloc]initWithCropRegion:CGRectMake(0.25, 0.25, 0.25, 0.25)]];    // 裁剪
+//    [filterGroup addFilter:[[GPUImageCrosshatchFilter alloc]init]]; // 交叉影线
+//    [filterGroup addFilter:[[GPUImageDilationFilter alloc]initWithRadius:3]];
+//    [filterGroup addFilter:[[GPUImageDirectionalNonMaximumSuppressionFilter alloc]init]];
+//    [filterGroup addFilter:[[GPUImageColorPackingFilter alloc]init]];
+//    [filterGroup addFilter:[[GPUImageVignetteFilter alloc]init]]; //周围阴影
+//    [filterGroup addFilter:[[TwoSplitScreenFilter alloc]init]];  //二分屏
+//    [filterGroup addFilter:[[ThreeSplitScreenFilter alloc]init]]; //三分屏
+//    [filterGroup addFilter:[[FourSplitScreenFilter alloc]init]]; //四分屏
+//    [filterGroup addFilter:[[SixSplitScreenFilter alloc]init]]; //六分屏
+//    [filterGroup addFilter:[[NineSplitScreenFilter alloc]init]]; //九分屏
+//    [filterGroup addFilter:[[GPUImageSphereRefractionFilter alloc]init]]; //球形折射
+//    [filterGroup addFilter:[[GPUImageGlassSphereFilter alloc]init]]; //水晶球
+//    [filterGroup addFilter:[[GPUImagePolarPixellateFilter alloc]init]]; //像素化
+//    [filterGroup addFilter:[[GPUImagePixellateFilter alloc]init]];  //像素化2
+//    [filterGroup addFilter:[[GPUImageSmoothToonFilter alloc]init]]; //卡通
+//    [filterGroup addFilter:[[GPUImageToonFilter alloc]init]];//卡通2
     //GPUImageVignetteFilter
-    [_listView loadListWithGPUImageFilterGroup:filterGroup];
+//    [_listView loadListWithGPUImageFilterGroup:filterGroup];
 }
 
 - (void)addBottomItems
@@ -71,12 +83,23 @@
 }
 
 #pragma mark - FilterListViewDelegate
-- (void)filterListViewDidSelectedFilter:(GPUImageOutput<GPUImageInput> *)filter
+- (void)filterListView:(id)listView didSelected:(NSInteger)index
 {
+    ZZFilterModel *model = _filterArray[index];
+    GPUImageFilter *filter =  [[ZZFilterManager shareManager]filterWithFilterID:model.filterID];
+//    if ([filter isKindOfClass:[GPUImagePolkaDotFilter class]]) {
+//        ((GPUImagePolkaDotFilter *)filter).dotScaling = 1.00;
+//    }
     if([self.delegate respondsToSelector:@selector(imageFilterVCUpdateFilter:)]){
         [self.delegate imageFilterVCUpdateFilter:filter];
     }
 }
+//- (void)filterListViewDidSelectedFilter:(GPUImageFilter *)filter
+//{
+//    if([self.delegate respondsToSelector:@selector(imageFilterVCUpdateFilter:)]){
+//        [self.delegate imageFilterVCUpdateFilter:filter];
+//    }
+//}
 
 - (void)addListView
 {
@@ -124,6 +147,15 @@
 {
     _normalFilterBtn.selected = sender.tag == 300 ? YES : NO;
     _customFilterBtn.selected = sender.tag == 301 ? YES : NO;
+    
+    if(sender.tag == 300){//常用
+        _filterArray = [ZZFilterManager shareManager].defaultFilters;
+        _listView.itemList = _filterArray;
+    }else{//自定义
+        _filterArray = [ZZFilterManager shareManager].customFilters;
+        _listView.itemList = _filterArray;
+    }
+    
 }
 
 - (void)buildViews

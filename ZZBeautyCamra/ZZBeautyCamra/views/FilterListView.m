@@ -49,9 +49,14 @@
     return _collectionView;
 }
 
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
+{
+    return 1;
+}
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return _filterGroup.filterCount;
+//    return _filterGroup.filterCount;
+    return self.itemList.count;
 }
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -60,7 +65,8 @@
         CGSize size = CGSizeMake(self.frame.size.height - 20, self.frame.size.height);
         cell = [[FilterCell alloc]initWithFrame:CGRectMake(0, 0, size.width, size.height)];
     }
-    [cell addFilter:[_filterGroup filterAtIndex:indexPath.row] inputImage:_currentInputImg];
+    cell.filterModel = [self.itemList objectAtIndex:indexPath.row];
+//    [cell addFilter:[_filterGroup filterAtIndex:indexPath.row] inputImage:_currentInputImg];
     return cell;
 }
 
@@ -72,14 +78,23 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     NSLog(@"collectionView:didSelectItemAtIndexPath:");
-    if([self.delegate respondsToSelector:@selector(filterListViewDidSelectedFilter:)]){
-        [self.delegate filterListViewDidSelectedFilter:[_filterGroup filterAtIndex:indexPath.row]];
+//    if([self.delegate respondsToSelector:@selector(filterListViewDidSelectedFilter:)]){
+//        [self.delegate filterListViewDidSelectedFilter:[self.itemList objectAtIndex:indexPath.row]];
+//    }
+    if([self.delegate respondsToSelector:@selector(filterListView:didSelected:)]){
+        [self.delegate filterListView:self didSelected:indexPath.row];
     }
 }
 
 - (void)loadListWithGPUImageFilterGroup:(GPUImageFilterGroup *)filterGroup
 {
     _filterGroup = filterGroup;
+    [self.collectionView reloadData];
+}
+
+- (void)setItemList:(NSArray<ZZFilterModel *> *)itemList
+{
+    _itemList = [itemList copy];
     [self.collectionView reloadData];
 }
 

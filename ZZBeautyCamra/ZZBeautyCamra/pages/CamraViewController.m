@@ -38,18 +38,18 @@
 
 
 #pragma mark - ImageFilterViewControllerDelegate
-- (void)imageFilterVCUpdateFilter:(GPUImageOutput<GPUImageInput> *)filter
+- (void)imageFilterVCUpdateFilter:(GPUImageFilter *)filter
 {
     [self.magicCamera switchFilter:filter];
 }
 
 -(void)takePhoto
 {
-    GPUImageSketchFilter *filter = [[GPUImageSketchFilter alloc]init];
-//    [stillCamera addTarget:filter];
-//    [filter addTarget:_mGPUImgView];
-//    _mFilter = filter;
-    [self.magicCamera switchFilter:filter];
+//    GPUImageSketchFilter *filter = [[GPUImageSketchFilter alloc]init];
+////    [stillCamera addTarget:filter];
+////    [filter addTarget:_mGPUImgView];
+////    _mFilter = filter;
+//    [self.magicCamera switchFilter:filter];
     
 //    //7.将图片通过PhotoKit add 相册中
 //    [stillCamera capturePhotoAsJPEGProcessedUpToFilter:_mFilter withCompletionHandler:^(NSData *processedJPEG, NSError *error){
@@ -112,6 +112,13 @@
             if(!openBeauty){
                 ZZBeautyFilter *zzbeautyFilter = [[ZZBeautyFilter alloc]init];
                 [self.magicCamera switchFilter:zzbeautyFilter];
+                
+//                GPUImagePixellateFilter *filter0 = [[GPUImagePixellateFilter alloc]init];
+//                GPUImageSepiaFilter *filter1 = [[GPUImageSepiaFilter alloc]init];
+//                GPUImageFilterGroup *group = [[GPUImageFilterGroup alloc]init];
+//                [self addGPUImageFilter:filter0 group:group];
+//                [self addGPUImageFilter:filter1 group:group];
+                
             }else{
                 GPUImageFilter *normalFilter = [[GPUImageFilter alloc]init];
                 [self.magicCamera switchFilter:normalFilter];
@@ -136,6 +143,24 @@
             break;
         default:
             break;
+    }
+}
+
+#pragma mark - 组合滤镜测试
+- (void)addGPUImageFilter:(GPUImageOutput<GPUImageInput> *)filter group:(GPUImageFilterGroup *)group
+{
+    [group addFilter:filter];
+    GPUImageOutput<GPUImageInput> *newTerminalFilter = filter;
+    NSInteger count = group.filterCount;
+    if (count == 1){ //当group的filterCount = 1 时,
+        group.initialFilters = @[newTerminalFilter];
+        group.terminalFilter = newTerminalFilter;
+    }else{
+        GPUImageOutput<GPUImageInput> *terminalFilter = group.terminalFilter;
+        NSArray *initialFilters = group.initialFilters;
+        [terminalFilter addTarget:newTerminalFilter];
+        group.initialFilters = @[initialFilters[0]];
+        group.terminalFilter = newTerminalFilter;
     }
 }
 

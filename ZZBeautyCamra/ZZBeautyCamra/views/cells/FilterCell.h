@@ -7,12 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "ZZFilterModel.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface FilterCell : UICollectionViewCell
 
 - (void)addFilter:(GPUImageOutput<GPUImageInput> *)filter inputImage:(UIImage *)inputImage;
+
+@property (nonatomic,strong) ZZFilterModel *filterModel;
 
 @end
 

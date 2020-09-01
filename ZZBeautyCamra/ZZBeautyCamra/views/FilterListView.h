@@ -7,11 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ZZFilterModel.h"
 NS_ASSUME_NONNULL_BEGIN
-
+@class FilterListView;
 @protocol FilterListViewDelegate <NSObject>
 
-- (void)filterListViewDidSelectedFilter:(GPUImageOutput<GPUImageInput> *)filter;
+@optional
+- (void)filterListViewDidSelectedFilter:(GPUImageFilter *)filter;
+- (void)filterListView:(FilterListView *)listView didSelected:(NSInteger)index;
 
 @end
 
@@ -20,6 +23,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,weak) id<FilterListViewDelegate> delegate;
 
 - (void)loadListWithGPUImageFilterGroup:(GPUImageFilterGroup *)filterGroup;
+
+@property (nonatomic,copy) NSArray <ZZFilterModel *> *itemList;
+
 
 @end
 

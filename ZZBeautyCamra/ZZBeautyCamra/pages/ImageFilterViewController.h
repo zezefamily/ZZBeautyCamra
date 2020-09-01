@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol ImageFilterViewControllerDelegate <NSObject>
 
-- (void)imageFilterVCUpdateFilter:(GPUImageOutput<GPUImageInput> *)filter;
+- (void)imageFilterVCUpdateFilter:(GPUImageFilter *)filter;
 
 @end
 
