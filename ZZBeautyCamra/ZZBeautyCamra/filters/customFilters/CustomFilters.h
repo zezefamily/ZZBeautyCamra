@@ -15,4 +15,7 @@
 #import "SixSplitScreenFilter.h"
 #import "NineSplitScreenFilter.h"
 
+
+#import "ZZBeautyFilter.h"
+
 #endif /* CustomFilters_h */

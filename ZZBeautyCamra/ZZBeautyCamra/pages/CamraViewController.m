@@ -17,6 +17,7 @@
 #import "ZZPresentationController.h"
 #import "ImageFilterViewController.h"
 #import "ZZMagicCamera.h"
+#import "CustomFilters.h"
 
 @interface CamraViewController ()<CamraTopBarDelegate,CameraBottomBarDelegate,UINavigationControllerDelegate,UIViewControllerTransitioningDelegate,ImageFilterViewControllerDelegate>
 @property (nonatomic,strong) ZZMagicCamera *magicCamera;
@@ -107,7 +108,15 @@
     switch (index) {
         case 0: //美颜开关
         {
-            
+            static BOOL openBeauty = NO;
+            if(!openBeauty){
+                ZZBeautyFilter *zzbeautyFilter = [[ZZBeautyFilter alloc]init];
+                [self.magicCamera switchFilter:zzbeautyFilter];
+            }else{
+                GPUImageFilter *normalFilter = [[GPUImageFilter alloc]init];
+                [self.magicCamera switchFilter:normalFilter];
+            }
+            openBeauty = !openBeauty;
         }
             break;
         case 1: //拍照

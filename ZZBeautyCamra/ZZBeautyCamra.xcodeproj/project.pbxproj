@@ -38,6 +38,9 @@
 		FFF41C5A24F8FB8B0053AD86 /* TwoSplitScreenFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = FFF41C5924F8FB8B0053AD86 /* TwoSplitScreenFilter.m */; };
 		FFF41C5D24F8FBA00053AD86 /* FourSplitScreenFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = FFF41C5C24F8FBA00053AD86 /* FourSplitScreenFilter.m */; };
 		FFF41C6024F8FBB30053AD86 /* SixSplitScreenFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = FFF41C5F24F8FBB30053AD86 /* SixSplitScreenFilter.m */; };
+		FFF41CB024FDF3A10053AD86 /* DefaultFilterMaterials.plist in Resources */ = {isa = PBXBuildFile; fileRef = FFF41CAF24FDF3A10053AD86 /* DefaultFilterMaterials.plist */; };
+		FFF41CB224FDF94B0053AD86 /* DefineFilterMaterials.plist in Resources */ = {isa = PBXBuildFile; fileRef = FFF41CB124FDF94A0053AD86 /* DefineFilterMaterials.plist */; };
+		FFF41CB524FDFA000053AD86 /* ZZBeautyFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = FFF41CB424FDFA000053AD86 /* ZZBeautyFilter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,6 +125,10 @@
 		FFF41C5E24F8FBB30053AD86 /* SixSplitScreenFilter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SixSplitScreenFilter.h; sourceTree = "<group>"; };
 		FFF41C5F24F8FBB30053AD86 /* SixSplitScreenFilter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SixSplitScreenFilter.m; sourceTree = "<group>"; };
 		FFF41C6124F901070053AD86 /* CustomFilters.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomFilters.h; sourceTree = "<group>"; };
+		FFF41CAF24FDF3A10053AD86 /* DefaultFilterMaterials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DefaultFilterMaterials.plist; sourceTree = "<group>"; };
+		FFF41CB124FDF94A0053AD86 /* DefineFilterMaterials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DefineFilterMaterials.plist; sourceTree = "<group>"; };
+		FFF41CB324FDFA000053AD86 /* ZZBeautyFilter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZZBeautyFilter.h; sourceTree = "<group>"; };
+		FFF41CB424FDFA000053AD86 /* ZZBeautyFilter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZZBeautyFilter.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -294,6 +301,8 @@
 		FFF41C4524F8DF2C0053AD86 /* filters */ = {
 			isa = PBXGroup;
 			children = (
+				FFF41CB124FDF94A0053AD86 /* DefineFilterMaterials.plist */,
+				FFF41CAF24FDF3A10053AD86 /* DefaultFilterMaterials.plist */,
 				FFF41C4824F8E3420053AD86 /* customFilters */,
 				FFF41C4624F8DF520053AD86 /* filterList.plist */,
 			);
@@ -303,6 +312,7 @@
 		FFF41C4824F8E3420053AD86 /* customFilters */ = {
 			isa = PBXGroup;
 			children = (
+				FFF41C6124F901070053AD86 /* CustomFilters.h */,
 				FFF41C4C24F8FB250053AD86 /* ThreeSplitScreenFilter.h */,
 				FFF41C4D24F8FB250053AD86 /* ThreeSplitScreenFilter.m */,
 				FFF41C5524F8FB5F0053AD86 /* NineSplitScreenFilter.h */,
@@ -313,7 +323,8 @@
 				FFF41C5C24F8FBA00053AD86 /* FourSplitScreenFilter.m */,
 				FFF41C5E24F8FBB30053AD86 /* SixSplitScreenFilter.h */,
 				FFF41C5F24F8FBB30053AD86 /* SixSplitScreenFilter.m */,
-				FFF41C6124F901070053AD86 /* CustomFilters.h */,
+				FFF41CB324FDFA000053AD86 /* ZZBeautyFilter.h */,
+				FFF41CB424FDFA000053AD86 /* ZZBeautyFilter.m */,
 			);
 			path = customFilters;
 			sourceTree = "<group>";
@@ -426,10 +437,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFF41CB224FDF94B0053AD86 /* DefineFilterMaterials.plist in Resources */,
 				FF49A28C24EB7C5600FC60FC /* Preview.jpg in Resources */,
 				FF49A25924EB704200FC60FC /* LaunchScreen.storyboard in Resources */,
 				FFF41C4724F8DF520053AD86 /* filterList.plist in Resources */,
 				FF49A25624EB704200FC60FC /* Assets.xcassets in Resources */,
+				FFF41CB024FDF3A10053AD86 /* DefaultFilterMaterials.plist in Resources */,
 				FF49A25424EB703B00FC60FC /* Main.storyboard in Resources */,
 				FF49A28B24EB7C5600FC60FC /* GPUImage11.pdf in Resources */,
 			);
@@ -577,6 +590,7 @@
 				FF49A2A524EE58E200FC60FC /* FilterListView.m in Sources */,
 				FF49A28F24EBE44800FC60FC /* MainViewController.m in Sources */,
 				FF49A24E24EB703B00FC60FC /* SceneDelegate.m in Sources */,
+				FFF41CB524FDFA000053AD86 /* ZZBeautyFilter.m in Sources */,
 				FFF41C4E24F8FB250053AD86 /* ThreeSplitScreenFilter.m in Sources */,
 				FF49A29824EE25A900FC60FC /* CameraBottomBar.m in Sources */,
 			);
