@@ -25,8 +25,9 @@
 
 #define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
 #define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
-#define ThemeColor [UIColor colorWithRed:0.92f green:0.37f blue:0.89f alpha:1.00f]
+#define ThemeColor [UIColor colorWithRed:1.00 green:0.48 blue:0.95 alpha:1.00]
 //[UIColor colorWithRed:0.83f green:0.14f blue:0.48f alpha:1.00f]
 //[UIColor colorWithRed:0.92f green:0.37f blue:0.89f alpha:1.00f]
+//[UIColor colorWithRed:1.00 green:0.48 blue:0.95 alpha:1.00]
 #define TextColor [UIColor colorWithRed:0.26f green:0.26f blue:0.27f alpha:1.00f]
 #endif /* PrefixHeader_pch */

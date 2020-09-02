@@ -138,6 +138,7 @@
 		FFF41CBB24FE2D150053AD86 /* ZZFilterManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZZFilterManager.m; sourceTree = "<group>"; };
 		FFF41CBD24FE2D310053AD86 /* ZZFilterModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZZFilterModel.h; sourceTree = "<group>"; };
 		FFF41CBE24FE2D310053AD86 /* ZZFilterModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZZFilterModel.m; sourceTree = "<group>"; };
+		FFF41CC024FF7A060053AD86 /* ZZBeautyCamra-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ZZBeautyCamra-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,6 +244,7 @@
 				FF49A25B24EB704200FC60FC /* main.m */,
 				FF49A28924EB7C5600FC60FC /* GPUImage11.pdf */,
 				FF49A28A24EB7C5600FC60FC /* Preview.jpg */,
+				FFF41CC024FF7A060053AD86 /* ZZBeautyCamra-Bridging-Header.h */,
 			);
 			path = ZZBeautyCamra;
 			sourceTree = "<group>";
@@ -424,6 +426,7 @@
 				TargetAttributes = {
 					FF49A24524EB703A00FC60FC = {
 						CreatedOnToolsVersion = 11.4.1;
+						LastSwiftMigration = 1140;
 					};
 					FF49A26024EB704200FC60FC = {
 						CreatedOnToolsVersion = 11.4.1;
@@ -788,6 +791,7 @@
 			baseConfigurationReference = 5EC9B90C1F5494838CD39FED /* Pods-ZZBeautyCamra.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BKB2W89RHK;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ZZBeautyCamra/PrefixHeader.pch";
@@ -799,6 +803,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ios.ZZBeautyCamra;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ZZBeautyCamra/ZZBeautyCamra-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -808,6 +815,7 @@
 			baseConfigurationReference = AE7CD43DAEE40D6FE891B90A /* Pods-ZZBeautyCamra.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BKB2W89RHK;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ZZBeautyCamra/PrefixHeader.pch";
@@ -819,6 +827,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ios.ZZBeautyCamra;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ZZBeautyCamra/ZZBeautyCamra-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

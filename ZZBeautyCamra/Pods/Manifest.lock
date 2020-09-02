@@ -1,16 +1,26 @@
 PODS:
+  - CycleScrollView (1.0.0):
+    - SDWebImage (~> 3.8.1)
   - GPUImage (0.1.7)
+  - SDWebImage (3.8.3):
+    - SDWebImage/Core (= 3.8.3)
+  - SDWebImage/Core (3.8.3)
 
 DEPENDENCIES:
+  - CycleScrollView (~> 1.0.0)
   - GPUImage (~> 0.1.7)
 
 SPEC REPOS:
-  trunk:
+  https://github.com/CocoaPods/Specs.git:
+    - CycleScrollView
     - GPUImage
+    - SDWebImage
 
 SPEC CHECKSUMS:
+  CycleScrollView: 30d2074db86be771ae71429805f2cb2b087ac3e2
   GPUImage: 733a5f0fab92df9de1c37ba9df520a833ccb406d
+  SDWebImage: a72e880a8fe0f7fc31efe15aaed443c074d2a80c
 
-PODFILE CHECKSUM: 4125f29831eeeeab7a65f8ab67e051794aac299f
+PODFILE CHECKSUM: 0988c9a26b15ee59062fad5a60c5272cb7ba497f
 
 COCOAPODS: 1.9.1

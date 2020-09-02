@@ -1,2 +1,4 @@
 ${PODS_ROOT}/Target Support Files/Pods-ZZBeautyCamra-ZZBeautyCamraUITests/Pods-ZZBeautyCamra-ZZBeautyCamraUITests-frameworks.sh
+${BUILT_PRODUCTS_DIR}/CycleScrollView/CycleScrollView.framework
 ${BUILT_PRODUCTS_DIR}/GPUImage/GPUImage.framework
+${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework
