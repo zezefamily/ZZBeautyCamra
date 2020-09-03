@@ -18,8 +18,9 @@
 #import "ImageFilterViewController.h"
 #import "ZZMagicCamera.h"
 #import "CustomFilters.h"
+#import "CaptureImageResultViewController.h"
 
-@interface CamraViewController ()<CamraTopBarDelegate,CameraBottomBarDelegate,UINavigationControllerDelegate,UIViewControllerTransitioningDelegate,ImageFilterViewControllerDelegate>
+@interface CamraViewController ()<CamraTopBarDelegate,CameraBottomBarDelegate,UINavigationControllerDelegate,UIViewControllerTransitioningDelegate,ImageFilterViewControllerDelegate,CaptureImageResultViewControllerDelegate>
 @property (nonatomic,strong) ZZMagicCamera *magicCamera;
 @property (nonatomic,strong) CamraTopBar *cameraTopBar;
 @property (nonatomic,strong) CameraBottomBar *cameraBottomBar;
@@ -45,27 +46,31 @@
 
 -(void)takePhoto
 {
-//    GPUImageSketchFilter *filter = [[GPUImageSketchFilter alloc]init];
-////    [stillCamera addTarget:filter];
-////    [filter addTarget:_mGPUImgView];
-////    _mFilter = filter;
-//    [self.magicCamera switchFilter:filter];
-    
-//    //7.将图片通过PhotoKit add 相册中
-//    [stillCamera capturePhotoAsJPEGProcessedUpToFilter:_mFilter withCompletionHandler:^(NSData *processedJPEG, NSError *error){
-//        UIImage * image = [UIImage imageWithData:processedJPEG];
-//
-//        [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
-//
-//            [[PHAssetCreationRequest creationRequestForAsset] addResourceWithType:PHAssetResourceTypePhoto data:processedJPEG options:nil];
-//
-//        } completionHandler:^(BOOL success, NSError * _Nullable error) {
-//
-//        }];
-//        [self->stillCamera stopCameraCapture];
-//    }];
+    __weak typeof(self) weakSelf = self;
+    __weak typeof(ZZMagicCamera *) weakCamera = self.magicCamera;
+    [self.magicCamera capturePhotoAsJPEGCompletionHandler:^(NSData * _Nonnull processedJPEG, NSError * _Nonnull error) {
+        CaptureImageResultViewController *resultVC = [[CaptureImageResultViewController alloc]init];
+        resultVC.resultImgData = processedJPEG;
+        resultVC.delegate = weakSelf;
+        resultVC.modalPresentationStyle = UIModalPresentationFullScreen;
+        [weakSelf presentViewController:resultVC animated:NO completion:nil];
+        [weakCamera zz_stopCameraCapture];
+    }];
 }
 
+#pragma mark - CaptureImageResultViewControllerDelegate
+- (void)captureImageResultViewDismiss:(CaptureImageResultViewController *)controller
+{
+    [controller dismissViewControllerAnimated:NO completion:nil];
+    [self.magicCamera zz_startCameraCapture];
+}
+- (void)captureImageResultViewCompleted:(CaptureImageResultViewController *)controller
+{
+    [controller dismissViewControllerAnimated:NO completion:nil];
+    [self.magicCamera zz_startCameraCapture];
+}
+
+//GPUImageCamera
 - (void)addFilterCamera
 {
     self.magicCamera = [[ZZMagicCamera alloc]initWithFrame:self.view.bounds options:@{}];
@@ -112,13 +117,14 @@
             if(!openBeauty){
                 ZZBeautyFilter *zzbeautyFilter = [[ZZBeautyFilter alloc]init];
                 [self.magicCamera switchFilter:zzbeautyFilter];
-                
 //                GPUImagePixellateFilter *filter0 = [[GPUImagePixellateFilter alloc]init];
 //                GPUImageSepiaFilter *filter1 = [[GPUImageSepiaFilter alloc]init];
 //                GPUImageFilterGroup *group = [[GPUImageFilterGroup alloc]init];
 //                [self addGPUImageFilter:filter0 group:group];
 //                [self addGPUImageFilter:filter1 group:group];
-                
+//                GPUImageCropFilter *cropFilter = [[GPUImageCropFilter alloc]init];
+//                cropFilter.cropRegion = CGRectMake(0, 0, 0.5, 0.5);
+//                [self.magicCamera switchFilter:cropFilter];
             }else{
                 GPUImageFilter *normalFilter = [[GPUImageFilter alloc]init];
                 [self.magicCamera switchFilter:normalFilter];
@@ -146,7 +152,7 @@
     }
 }
 
-#pragma mark - 组合滤镜测试
+#pragma mark - 组合滤镜#测试
 - (void)addGPUImageFilter:(GPUImageOutput<GPUImageInput> *)filter group:(GPUImageFilterGroup *)group
 {
     [group addFilter:filter];

@@ -7,8 +7,6 @@
 //
 
 #import "ZZMagicCamera.h"
-#import <PhotosUI/PhotosUI.h>
-#import <AssetsLibrary/ALAssetsLibrary.h>
 
 @interface ZZMagicCamera ()
 @property (nonatomic,strong) GPUImageStillCamera *stillCamera;
@@ -30,18 +28,29 @@
 - (void)loadGPUImageMoudle
 {
     self.captrueView = [[GPUImageView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
-    _captrueView.fillMode = kGPUImageFillModePreserveAspectRatioAndFill;
-    _captrueView.autoresizingMask = UIViewAutoresizingFlexibleWidth |UIViewAutoresizingFlexibleHeight;
+//    _captrueView.fillMode = kGPUImageFillModePreserveAspectRatioAndFill;
+//    _captrueView.autoresizingMask = UIViewAutoresizingFlexibleWidth |UIViewAutoresizingFlexibleHeight;
     [self addSubview:_captrueView];
     GPUImageFilter *filter = [[GPUImageFilter alloc] init];
-//    GPUImageExposureFilter *filter = [[GPUImageExposureFilter alloc]init];
-    self.stillCamera = [[GPUImageStillCamera alloc] initWithSessionPreset:AVCaptureSessionPresetMedium cameraPosition:AVCaptureDevicePositionFront];
+    self.currentFilter = filter;
+    //AVCaptureSessionPresetMedium
+    //AVCaptureSessionPreset1280x720
+    self.stillCamera = [[GPUImageStillCamera alloc] initWithSessionPreset:AVCaptureSessionPreset1280x720 cameraPosition:AVCaptureDevicePositionFront];
     _stillCamera.horizontallyMirrorFrontFacingCamera = YES; //前置镜像
     _stillCamera.outputImageOrientation = UIInterfaceOrientationPortrait;  //竖屏
     //第四步： addTarget 并开始处理startCameraCapture
     [_stillCamera addTarget:filter];
     [filter addTarget:_captrueView];
     [_stillCamera startCameraCapture]; // 开始捕获
+}
+
+- (void)zz_startCameraCapture
+{
+    [_stillCamera startCameraCapture]; // 开始捕获
+}
+- (void)zz_stopCameraCapture
+{
+    [_stillCamera stopCameraCapture]; // 停止捕获
 }
 
 - (void)switchFilter:(id<GPUImageInput>)filter
@@ -53,28 +62,40 @@
     [self.currentFilter addTarget:_captrueView];
 }
 
-//    //7.将图片通过PhotoKit add 相册中
-//    [stillCamera capturePhotoAsJPEGProcessedUpToFilter:_mFilter withCompletionHandler:^(NSData *processedJPEG, NSError *error){
-//        UIImage * image = [UIImage imageWithData:processedJPEG];
-//
-//        [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
-//
-//            [[PHAssetCreationRequest creationRequestForAsset] addResourceWithType:PHAssetResourceTypePhoto data:processedJPEG options:nil];
-//
-//        } completionHandler:^(BOOL success, NSError * _Nullable error) {
-//
-//        }];
-//        [self->stillCamera stopCameraCapture];
-//    }];
+- (void)capturePhotoAsJPEGCompletionHandler:(void (^)(NSData *processedJPEG, NSError *error))block
+{
+    [_stillCamera capturePhotoAsJPEGProcessedUpToFilter:self.currentFilter withCompletionHandler:^(NSData *processedJPEG, NSError *error) {
+        if(block){
+            block(processedJPEG,error);
+        }
+    }];
+}
 
 - (void)switchCamera
 {
     [self.stillCamera rotateCamera];
 }
-
 - (void)destroy
 {
     [self.stillCamera stopCameraCapture];
+}
+
+#pragma mark - 组合滤镜#测试
+- (void)addGPUImageFilter:(GPUImageOutput<GPUImageInput> *)filter group:(GPUImageFilterGroup *)group
+{
+    [group addFilter:filter];
+    GPUImageOutput<GPUImageInput> *newTerminalFilter = filter;
+    NSInteger count = group.filterCount;
+    if (count == 1){ //当group的filterCount = 1 时,
+        group.initialFilters = @[newTerminalFilter];
+        group.terminalFilter = newTerminalFilter;
+    }else{
+        GPUImageOutput<GPUImageInput> *terminalFilter = group.terminalFilter;
+        NSArray *initialFilters = group.initialFilters;
+        [terminalFilter addTarget:newTerminalFilter];
+        group.initialFilters = @[initialFilters[0]];
+        group.terminalFilter = newTerminalFilter;
+    }
 }
 
 @end

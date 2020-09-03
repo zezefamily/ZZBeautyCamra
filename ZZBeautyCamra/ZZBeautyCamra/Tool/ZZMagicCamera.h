@@ -20,6 +20,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)switchCamera;
 
+- (void)zz_startCameraCapture;
+
+- (void)zz_stopCameraCapture;
+
+- (void)capturePhotoAsJPEGCompletionHandler:(void (^)(NSData *processedJPEG, NSError *error))block;
+
 - (void)destroy;
 
 @end

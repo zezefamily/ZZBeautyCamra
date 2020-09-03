@@ -9,7 +9,9 @@
 #import "MainViewController.h"
 #import "CamraViewController.h"
 #import "CycleScrollVIew.h"
-@interface MainViewController ()
+#import "LocalImageProcessViewController.h"
+#import "SimpleVideoViewController.h"
+@interface MainViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 {
     UIImageView *_bannerImgView;
 }
@@ -43,7 +45,7 @@
     [self.view addSubview:contentView];
     //相机
     UIButton *camraBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    camraBtn.frame = CGRectMake(self.view.frame.size.width/2 - 45, contentView.frame.size.height - 90 - 15, 90, 90);
+    camraBtn.frame = CGRectMake(self.view.frame.size.width/2 - 45, contentView.frame.size.height - 90 - 10, 90, 90);
     camraBtn.backgroundColor = ThemeColor;
     [camraBtn setImage:[UIImage imageNamed:@"camera_icon"] forState:UIControlStateNormal];
     camraBtn.layer.cornerRadius = 45;
@@ -95,20 +97,40 @@
     switch (tag) {
         case 0:
         {
-            
+            UIImagePickerController *imagePickerVC = [[UIImagePickerController alloc]init];
+            imagePickerVC.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+            imagePickerVC.delegate = self;
+            [self presentViewController:imagePickerVC animated:YES completion:nil];
         }
             break;
-            
+        case 1:
+        {
+            SimpleVideoViewController *simpleVideoVC = [[SimpleVideoViewController alloc]init];
+            [self.navigationController pushViewController:simpleVideoVC animated:YES];
+        }
+            break;
         default:
             break;
     }
     
 }
-
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<UIImagePickerControllerInfoKey,id> *)info
+{
+    [picker dismissViewControllerAnimated:YES completion:nil];
+//    NSLog(@"info == %@",info);
+    UIImage *pickImage = info[UIImagePickerControllerOriginalImage];
+    LocalImageProcessViewController *localImgPVC = [[LocalImageProcessViewController alloc]init];
+    localImgPVC.image = pickImage;
+    [self.navigationController pushViewController:localImgPVC animated:YES];
+    
+}
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
+    [picker dismissViewControllerAnimated:YES completion:nil];
+}
 
 - (void)loadBannerView
 {
-    _bannerImgView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height/2 + 30)];
+    _bannerImgView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height/2 + 50)];
     _bannerImgView.backgroundColor = [UIColor systemGreenColor];
     [self.view addSubview:_bannerImgView];
     
@@ -129,7 +151,7 @@
     cycleScrollView.autoScrollTimeInterval = 4;//设置循环滚动的时长
     cycleScrollView.autoScroll = YES;//设置是不是自动循环滚动
     cycleScrollView.scrollDirection = UICollectionViewScrollDirectionHorizontal;//设置滚动方向
-    cycleScrollView.showPageControl = NO;//是不是显示分页控件
+    cycleScrollView.showPageControl = YES;//是不是显示分页控件
     [_bannerImgView addSubview:cycleScrollView];
     
     /// 娱乐一下
@@ -140,7 +162,7 @@
         smallNameFrame =  CGRectMake(12, 44+25, 80, 20);
     }else{
         appNameFrame =  CGRectMake(12, 20, 80, 25);
-        smallNameFrame =  CGRectMake(12, 44+25, 80, 20);
+        smallNameFrame =  CGRectMake(12, 20+25, 80, 20);
     }
     UILabel *appName = [[UILabel alloc]initWithFrame:appNameFrame];
     appName.backgroundColor = [UIColor lightGrayColor];

@@ -12,6 +12,9 @@
 		F39C26DF28CD48C14BC692C8 /* Pods_ZZBeautyCamra_ZZBeautyCamraUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A9F247B359ED37F9BC75351 /* Pods_ZZBeautyCamra_ZZBeautyCamraUITests.framework */; };
 		F427E46A24ECA1B800D2772C /* CamraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F427E46924ECA1B800D2772C /* CamraViewController.m */; };
 		F427E4A124EECA3700D2772C /* FilterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F427E4A024EECA3700D2772C /* FilterCell.m */; };
+		FF35F3262500A15700F614C4 /* CaptureImageResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF35F3252500A15700F614C4 /* CaptureImageResultViewController.m */; };
+		FF35F3292500CEB500F614C4 /* LocalImageProcessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF35F3282500CEB500F614C4 /* LocalImageProcessViewController.m */; };
+		FF35F32C2500E00E00F614C4 /* SimpleVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF35F32B2500E00E00F614C4 /* SimpleVideoViewController.m */; };
 		FF49A24B24EB703B00FC60FC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FF49A24A24EB703B00FC60FC /* AppDelegate.m */; };
 		FF49A24E24EB703B00FC60FC /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FF49A24D24EB703B00FC60FC /* SceneDelegate.m */; };
 		FF49A25124EB703B00FC60FC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF49A25024EB703B00FC60FC /* ViewController.m */; };
@@ -77,6 +80,12 @@
 		F427E46924ECA1B800D2772C /* CamraViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CamraViewController.m; sourceTree = "<group>"; };
 		F427E49F24EECA3700D2772C /* FilterCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FilterCell.h; sourceTree = "<group>"; };
 		F427E4A024EECA3700D2772C /* FilterCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FilterCell.m; sourceTree = "<group>"; };
+		FF35F3242500A15700F614C4 /* CaptureImageResultViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CaptureImageResultViewController.h; sourceTree = "<group>"; };
+		FF35F3252500A15700F614C4 /* CaptureImageResultViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CaptureImageResultViewController.m; sourceTree = "<group>"; };
+		FF35F3272500CEB500F614C4 /* LocalImageProcessViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocalImageProcessViewController.h; sourceTree = "<group>"; };
+		FF35F3282500CEB500F614C4 /* LocalImageProcessViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocalImageProcessViewController.m; sourceTree = "<group>"; };
+		FF35F32A2500E00E00F614C4 /* SimpleVideoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SimpleVideoViewController.h; sourceTree = "<group>"; };
+		FF35F32B2500E00E00F614C4 /* SimpleVideoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimpleVideoViewController.m; sourceTree = "<group>"; };
 		FF49A24624EB703B00FC60FC /* ZZBeautyCamra.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZZBeautyCamra.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF49A24924EB703B00FC60FC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FF49A24A24EB703B00FC60FC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -276,6 +285,12 @@
 				F427E46924ECA1B800D2772C /* CamraViewController.m */,
 				FF49A29A24EE4BDA00FC60FC /* ImageFilterViewController.h */,
 				FF49A29B24EE4BDA00FC60FC /* ImageFilterViewController.m */,
+				FF35F3242500A15700F614C4 /* CaptureImageResultViewController.h */,
+				FF35F3252500A15700F614C4 /* CaptureImageResultViewController.m */,
+				FF35F3272500CEB500F614C4 /* LocalImageProcessViewController.h */,
+				FF35F3282500CEB500F614C4 /* LocalImageProcessViewController.m */,
+				FF35F32A2500E00E00F614C4 /* SimpleVideoViewController.h */,
+				FF35F32B2500E00E00F614C4 /* SimpleVideoViewController.m */,
 			);
 			path = pages;
 			sourceTree = "<group>";
@@ -607,9 +622,11 @@
 				FF49A2A224EE54E700FC60FC /* UIViewController+ZZAnimationTransitioningSnapshot.m in Sources */,
 				FF49A2A824EE604700FC60FC /* ZZPresentationController.m in Sources */,
 				FF49A29424ED02ED00FC60FC /* CamraTopBar.m in Sources */,
+				FF35F32C2500E00E00F614C4 /* SimpleVideoViewController.m in Sources */,
 				FF49A2AB24EE62DE00FC60FC /* ZZMagicCamera.m in Sources */,
 				FFF41C5D24F8FBA00053AD86 /* FourSplitScreenFilter.m in Sources */,
 				F427E46A24ECA1B800D2772C /* CamraViewController.m in Sources */,
+				FF35F3292500CEB500F614C4 /* LocalImageProcessViewController.m in Sources */,
 				FFF41CBC24FE2D150053AD86 /* ZZFilterManager.m in Sources */,
 				FF49A24B24EB703B00FC60FC /* AppDelegate.m in Sources */,
 				FF49A29C24EE4BDA00FC60FC /* ImageFilterViewController.m in Sources */,
@@ -622,6 +639,7 @@
 				FFF41CBF24FE2D310053AD86 /* ZZFilterModel.m in Sources */,
 				FFF41C4E24F8FB250053AD86 /* ThreeSplitScreenFilter.m in Sources */,
 				FF49A29824EE25A900FC60FC /* CameraBottomBar.m in Sources */,
+				FF35F3262500A15700F614C4 /* CaptureImageResultViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
