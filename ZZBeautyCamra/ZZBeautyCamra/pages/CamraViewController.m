@@ -99,13 +99,16 @@
 #pragma mark - CamraTopBarDelegate
 - (void)camraTopBarItemDidSelected:(NSInteger)index
 {
-    if(index == 0){
+    if(index == 0){ //退出
         [self.magicCamera destroy];
         [self.navigationController popViewControllerAnimated:YES];
-    }else if (index == 1){
+    }else if (index == 1){ //前后摄像头切换
         [self.magicCamera switchCamera];
+    }else if (index == 2){ //拍照
+        
+    }else if (index == 3){ //摄像
+        
     }
-    
 }
 #pragma mark - CameraBottomBarDelegate
 - (void)cameraBottomBarItemSelected:(NSInteger)index
