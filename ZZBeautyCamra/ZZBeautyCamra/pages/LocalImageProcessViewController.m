@@ -22,11 +22,15 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
-    
     imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, Margin_Top, self.view.frame.size.width,self.view.frame.size.height - Margin_Top)];
     imageView.contentMode = UIViewContentModeScaleAspectFit;
     imageView.image = self.image;
     [self.view addSubview:imageView];
+    
+   
+    
+    
+    
     _filters =  [ZZFilterManager shareManager].defaultFilters;
     //这里简单测试一下
     for(int i = 0;i < 5; i++){

@@ -24,9 +24,49 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
-    [self loadUI];
+//    [self loadUI];
+    
+    
+    [self performSelector:@selector(todoSth) withObject:nil afterDelay:5];
+}
+
+- (void)todoSth
+{
+    NSLog(@"todoSth");
+    
+    GPUImageView *filterView = [[GPUImageView alloc]initWithFrame:self.view.bounds];
+    filterView.backgroundColor = [UIColor blackColor];
+    [self.view addSubview:filterView];
+    
+    GPUImageStillCamera *videoCamera = [[GPUImageStillCamera alloc] initWithSessionPreset:AVCaptureSessionPreset640x480 cameraPosition:AVCaptureDevicePositionBack];
+    videoCamera.outputImageOrientation = UIInterfaceOrientationPortrait;
+
+    GPUImageAddBlendFilter *addBlendFilter = [[GPUImageAddBlendFilter alloc]init];
+    GPUImageFilter *filter = [[GPUImageFilter alloc]init];
+    [videoCamera addTarget:filter];
+
+
+    //    UIImage *inputImage = [UIImage imageNamed:@"logo"];
+    //    GPUImagePicture *sourcePicture = [[GPUImagePicture alloc] initWithImage:inputImage smoothlyScaleOutput:YES];
+    //    [sourcePicture processImage];
+    //    [sourcePicture addTarget:addBlendFilter];
+
+    [filter addTarget:filterView];
+
+        //    [_stillCamera addTarget:filter];
+        //    [filter addTarget:_captrueView];
+
+    [videoCamera startCameraCapture];
+    
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+       
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+        });
+    });
     
 }
+
 
 - (void)loadUI
 {

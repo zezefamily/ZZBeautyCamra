@@ -35,6 +35,8 @@
 		FF49A2A524EE58E200FC60FC /* FilterListView.m in Sources */ = {isa = PBXBuildFile; fileRef = FF49A2A424EE58E200FC60FC /* FilterListView.m */; };
 		FF49A2A824EE604700FC60FC /* ZZPresentationController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF49A2A724EE604700FC60FC /* ZZPresentationController.m */; };
 		FF49A2AB24EE62DE00FC60FC /* ZZMagicCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = FF49A2AA24EE62DE00FC60FC /* ZZMagicCamera.m */; };
+		FF714BD125010413002524FA /* WatermarkFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = FF714BD025010413002524FA /* WatermarkFilter.m */; };
+		FF714BD425022037002524FA /* GPUImageBeautifyFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = FF714BD325022037002524FA /* GPUImageBeautifyFilter.m */; };
 		FFF41C4724F8DF520053AD86 /* filterList.plist in Resources */ = {isa = PBXBuildFile; fileRef = FFF41C4624F8DF520053AD86 /* filterList.plist */; };
 		FFF41C4E24F8FB250053AD86 /* ThreeSplitScreenFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = FFF41C4D24F8FB250053AD86 /* ThreeSplitScreenFilter.m */; };
 		FFF41C5724F8FB5F0053AD86 /* NineSplitScreenFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = FFF41C5624F8FB5F0053AD86 /* NineSplitScreenFilter.m */; };
@@ -125,6 +127,10 @@
 		FF49A2A724EE604700FC60FC /* ZZPresentationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZZPresentationController.m; sourceTree = "<group>"; };
 		FF49A2A924EE62DE00FC60FC /* ZZMagicCamera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZZMagicCamera.h; sourceTree = "<group>"; };
 		FF49A2AA24EE62DE00FC60FC /* ZZMagicCamera.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZZMagicCamera.m; sourceTree = "<group>"; };
+		FF714BCF25010413002524FA /* WatermarkFilter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WatermarkFilter.h; sourceTree = "<group>"; };
+		FF714BD025010413002524FA /* WatermarkFilter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WatermarkFilter.m; sourceTree = "<group>"; };
+		FF714BD225022037002524FA /* GPUImageBeautifyFilter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPUImageBeautifyFilter.h; sourceTree = "<group>"; };
+		FF714BD325022037002524FA /* GPUImageBeautifyFilter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GPUImageBeautifyFilter.m; sourceTree = "<group>"; };
 		FFF41C4624F8DF520053AD86 /* filterList.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = filterList.plist; sourceTree = "<group>"; };
 		FFF41C4C24F8FB250053AD86 /* ThreeSplitScreenFilter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThreeSplitScreenFilter.h; sourceTree = "<group>"; };
 		FFF41C4D24F8FB250053AD86 /* ThreeSplitScreenFilter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThreeSplitScreenFilter.m; sourceTree = "<group>"; };
@@ -352,6 +358,10 @@
 				FFF41C5F24F8FBB30053AD86 /* SixSplitScreenFilter.m */,
 				FFF41CB324FDFA000053AD86 /* ZZBeautyFilter.h */,
 				FFF41CB424FDFA000053AD86 /* ZZBeautyFilter.m */,
+				FF714BCF25010413002524FA /* WatermarkFilter.h */,
+				FF714BD025010413002524FA /* WatermarkFilter.m */,
+				FF714BD225022037002524FA /* GPUImageBeautifyFilter.h */,
+				FF714BD325022037002524FA /* GPUImageBeautifyFilter.m */,
 			);
 			path = customFilters;
 			sourceTree = "<group>";
@@ -617,6 +627,7 @@
 				FFF41C5A24F8FB8B0053AD86 /* TwoSplitScreenFilter.m in Sources */,
 				FFF41C6024F8FBB30053AD86 /* SixSplitScreenFilter.m in Sources */,
 				FFF41CB924FE2BAA0053AD86 /* FilterHelper.m in Sources */,
+				FF714BD425022037002524FA /* GPUImageBeautifyFilter.m in Sources */,
 				FFF41C5724F8FB5F0053AD86 /* NineSplitScreenFilter.m in Sources */,
 				F427E4A124EECA3700D2772C /* FilterCell.m in Sources */,
 				FF49A2A224EE54E700FC60FC /* UIViewController+ZZAnimationTransitioningSnapshot.m in Sources */,
@@ -633,6 +644,7 @@
 				FF49A29F24EE4C9300FC60FC /* ZZTransitionAnimation.m in Sources */,
 				FF49A25C24EB704200FC60FC /* main.m in Sources */,
 				FF49A2A524EE58E200FC60FC /* FilterListView.m in Sources */,
+				FF714BD125010413002524FA /* WatermarkFilter.m in Sources */,
 				FF49A28F24EBE44800FC60FC /* MainViewController.m in Sources */,
 				FF49A24E24EB703B00FC60FC /* SceneDelegate.m in Sources */,
 				FFF41CB524FDFA000053AD86 /* ZZBeautyFilter.m in Sources */,

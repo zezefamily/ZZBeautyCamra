@@ -5,7 +5,7 @@
 //
 //  Created by wenmei on 2020/8/19.
 //  Copyright © 2020 泽泽. All rights reserved.
-//
+//  Dissolve blend
 #define Content_Size CGSizeMake(SCREEN_WIDTH, 220)
 
 
@@ -35,6 +35,22 @@
     self.navigationController.delegate = self;
     [self addFilterCamera];
     [self addTopBar];
+    
+//    GPUImageView *filteredVideoView = [[GPUImageView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+////    filteredVideoView.backgroundColor = [UIColor blackColor];
+//    [self.view addSubview:filteredVideoView];
+//
+//    GPUImageStillCamera *videoCamera = [[GPUImageStillCamera alloc] initWithSessionPreset:AVCaptureSessionPreset1280x720 cameraPosition:AVCaptureDevicePositionFront];
+//    videoCamera.outputImageOrientation = UIInterfaceOrientationPortrait;
+////    videoCamera.horizontallyMirrorFrontFacingCamera = YES; //前置镜像
+//
+//    GPUImageSketchFilter *customFilter = [[GPUImageSketchFilter alloc]init];
+//
+//    // Add the view somewhere so it's visible
+//    [videoCamera addTarget:customFilter];
+//    [customFilter addTarget:filteredVideoView];
+//
+//    [videoCamera startCameraCapture];
 }
 
 
@@ -73,8 +89,9 @@
 //GPUImageCamera
 - (void)addFilterCamera
 {
-    self.magicCamera = [[ZZMagicCamera alloc]initWithFrame:self.view.bounds options:@{}];
+    self.magicCamera = [[ZZMagicCamera alloc]initWithFrame:self.view.bounds type:ZZMagicCaptureTypeStill];
     [self.view addSubview:self.magicCamera];
+    [self.magicCamera zz_startCameraCapture];
 }
 
 - (void)addTopBar
@@ -118,16 +135,22 @@
         {
             static BOOL openBeauty = NO;
             if(!openBeauty){
-                ZZBeautyFilter *zzbeautyFilter = [[ZZBeautyFilter alloc]init];
-                [self.magicCamera switchFilter:zzbeautyFilter];
-//                GPUImagePixellateFilter *filter0 = [[GPUImagePixellateFilter alloc]init];
-//                GPUImageSepiaFilter *filter1 = [[GPUImageSepiaFilter alloc]init];
-//                GPUImageFilterGroup *group = [[GPUImageFilterGroup alloc]init];
-//                [self addGPUImageFilter:filter0 group:group];
-//                [self addGPUImageFilter:filter1 group:group];
-//                GPUImageCropFilter *cropFilter = [[GPUImageCropFilter alloc]init];
-//                cropFilter.cropRegion = CGRectMake(0, 0, 0.5, 0.5);
-//                [self.magicCamera switchFilter:cropFilter];
+//                GPUImageBeautifyFilter *zzbeautyFilter = [[GPUImageBeautifyFilter alloc]init];
+//                [self.magicCamera switchFilter:zzbeautyFilter];
+                
+                
+                
+                UIImage *inputImage = [UIImage imageNamed:@"logo"];
+                GPUImageAddBlendFilter *filter = [[GPUImageAddBlendFilter alloc]init];
+                GPUImagePicture *sourcePicture = [[GPUImagePicture alloc] initWithImage:inputImage smoothlyScaleOutput:YES];
+                [sourcePicture processImage];
+                [sourcePicture addTarget:filter];
+//                [self.magicCamera.stillCamera removeAllTargets];
+                [self.magicCamera.stillCamera addTarget:filter];
+                [filter addTarget:self.magicCamera.captrueView];
+                
+                [self.magicCamera zz_startCameraCapture];
+                
             }else{
                 GPUImageFilter *normalFilter = [[GPUImageFilter alloc]init];
                 [self.magicCamera switchFilter:normalFilter];

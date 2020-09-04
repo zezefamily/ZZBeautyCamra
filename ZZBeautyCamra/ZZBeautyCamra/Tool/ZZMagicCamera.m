@@ -9,17 +9,15 @@
 #import "ZZMagicCamera.h"
 
 @interface ZZMagicCamera ()
-@property (nonatomic,strong) GPUImageStillCamera *stillCamera;
-@property (nonatomic,strong) GPUImageVideoCamera *videoCamera;
-@property (nonatomic,strong) GPUImageFilter *currentFilter;
-@property (nonatomic,strong) GPUImageView *captrueView;
+
 @end
 
 @implementation ZZMagicCamera
 
-- (instancetype)initWithFrame:(CGRect)frame options:(id)options
+- (instancetype)initWithFrame:(CGRect)frame type:(ZZMagicCaptureType)captureType;
 {
     if(self == [super initWithFrame:frame]){
+        self.captureType = captureType;
         [self loadGPUImageMoudle];
     }
     return self;
@@ -35,30 +33,43 @@
     self.currentFilter = filter;
     //AVCaptureSessionPresetMedium
     //AVCaptureSessionPreset1280x720
-    self.stillCamera = [[GPUImageStillCamera alloc] initWithSessionPreset:AVCaptureSessionPreset1280x720 cameraPosition:AVCaptureDevicePositionFront];
-    _stillCamera.horizontallyMirrorFrontFacingCamera = YES; //前置镜像
-    _stillCamera.outputImageOrientation = UIInterfaceOrientationPortrait;  //竖屏
+//    self.stillCamera = [[GPUImageStillCamera alloc] initWithSessionPreset:AVCaptureSessionPreset1280x720 cameraPosition:AVCaptureDevicePositionFront];
+//    _stillCamera.horizontallyMirrorFrontFacingCamera = YES; //前置镜像
+//    _stillCamera.outputImageOrientation = UIInterfaceOrientationPortrait;  //竖屏
+    
+    self.videoCamera = [[GPUImageVideoCamera alloc] initWithSessionPreset:AVCaptureSessionPreset1280x720 cameraPosition:AVCaptureDevicePositionFront];
+    _videoCamera.horizontallyMirrorFrontFacingCamera = YES; //前置镜像
+    _videoCamera.outputImageOrientation = UIInterfaceOrientationPortrait;  //竖屏
+    self.captureType = ZZMagicCaptureTypeVideo;
     //第四步： addTarget 并开始处理startCameraCapture
-    [_stillCamera addTarget:filter];
+    [_videoCamera addTarget:filter];
     [filter addTarget:_captrueView];
-    [_stillCamera startCameraCapture]; // 开始捕获
+//    [_stillCamera startCameraCapture]; // 开始捕获
 }
 
 - (void)zz_startCameraCapture
 {
-    [_stillCamera startCameraCapture]; // 开始捕获
+    if(self.captureType == ZZMagicCaptureTypeStill){
+        [_stillCamera startCameraCapture]; // 开始捕获
+    }else{
+        [_videoCamera startCameraCapture];
+    }
 }
 - (void)zz_stopCameraCapture
 {
-    [_stillCamera stopCameraCapture]; // 停止捕获
+    if(self.captureType == ZZMagicCaptureTypeStill){
+        [_stillCamera stopCameraCapture]; // 开始捕获
+    }else{
+        [_videoCamera stopCameraCapture];
+    }
 }
 
 - (void)switchFilter:(id<GPUImageInput>)filter
 {
     //切换滤镜
     self.currentFilter = filter;
-    [_stillCamera removeAllTargets];
-    [_stillCamera addTarget:filter];
+//    [_stillCamera removeAllTargets];
+//    [_stillCamera addTarget:filter];
     [self.currentFilter addTarget:_captrueView];
 }
 
@@ -96,6 +107,11 @@
         group.initialFilters = @[initialFilters[0]];
         group.terminalFilter = newTerminalFilter;
     }
+}
+
+- (void)setCaptureType:(ZZMagicCaptureType)captureType
+{
+    _captureType = captureType;
 }
 
 @end
