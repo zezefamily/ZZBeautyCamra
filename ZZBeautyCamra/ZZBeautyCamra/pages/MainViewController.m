@@ -55,7 +55,7 @@
 
         //    [_stillCamera addTarget:filter];
         //    [filter addTarget:_captrueView];
-
+    [filter useNextFrameForImageCapture];
     [videoCamera startCameraCapture];
     
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
