@@ -2,7 +2,7 @@
 //  WatermarkFilter.h
 //  ZZBeautyCamra
 //
-//  Created by 泽泽 on 2020/9/3.
+//  Created by 泽泽 on 2020/9/7.
 //  Copyright © 2020 泽泽. All rights reserved.
 //
 
@@ -10,8 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-
-@interface WatermarkFilter : GPUImageFilter
+@interface WatermarkFilter : GPUImageTwoInputFilter
 
 @end
 

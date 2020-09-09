@@ -2,3 +2,4 @@ ${PODS_ROOT}/Target Support Files/Pods-ZZBeautyCamra-ZZBeautyCamraUITests/Pods-Z
 ${BUILT_PRODUCTS_DIR}/CycleScrollView/CycleScrollView.framework
 ${BUILT_PRODUCTS_DIR}/GPUImage/GPUImage.framework
 ${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework
+${BUILT_PRODUCTS_DIR}/Toast/Toast.framework

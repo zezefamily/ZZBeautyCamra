@@ -14,6 +14,9 @@
 @interface MainViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 {
     UIImageView *_bannerImgView;
+    GPUImageView *filterView;
+    GPUImageStillCamera *videoCamera;
+    GPUImagePicture *sourcePicture;
 }
 
 @end
@@ -24,47 +27,35 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
-//    [self loadUI];
-    
-    
-    [self performSelector:@selector(todoSth) withObject:nil afterDelay:5];
+    [self loadUI];
+//    [self performSelector:@selector(todoSth) withObject:nil afterDelay:2];
 }
 
 - (void)todoSth
 {
     NSLog(@"todoSth");
     
-    GPUImageView *filterView = [[GPUImageView alloc]initWithFrame:self.view.bounds];
+    filterView = [[GPUImageView alloc]initWithFrame:self.view.bounds];
     filterView.backgroundColor = [UIColor blackColor];
     [self.view addSubview:filterView];
-    
-    GPUImageStillCamera *videoCamera = [[GPUImageStillCamera alloc] initWithSessionPreset:AVCaptureSessionPreset640x480 cameraPosition:AVCaptureDevicePositionBack];
+    videoCamera = [[GPUImageStillCamera alloc] initWithSessionPreset:AVCaptureSessionPreset640x480 cameraPosition:AVCaptureDevicePositionBack];
     videoCamera.outputImageOrientation = UIInterfaceOrientationPortrait;
-
+    videoCamera.horizontallyMirrorFrontFacingCamera = YES; //前置镜像
+//    videoCamera.runBenchmark = YES;
+//    GPUImageFilter *filter = [[GPUImageFilter alloc]init];
+//    [videoCamera addTarget:filter];
+//    [filter addTarget:filterView];
     GPUImageAddBlendFilter *addBlendFilter = [[GPUImageAddBlendFilter alloc]init];
-    GPUImageFilter *filter = [[GPUImageFilter alloc]init];
-    [videoCamera addTarget:filter];
-
-
-    //    UIImage *inputImage = [UIImage imageNamed:@"logo"];
-    //    GPUImagePicture *sourcePicture = [[GPUImagePicture alloc] initWithImage:inputImage smoothlyScaleOutput:YES];
-    //    [sourcePicture processImage];
-    //    [sourcePicture addTarget:addBlendFilter];
-
-    [filter addTarget:filterView];
-
-        //    [_stillCamera addTarget:filter];
-        //    [filter addTarget:_captrueView];
-    [filter useNextFrameForImageCapture];
+    [videoCamera addTarget:addBlendFilter];
+    
+    UIImage *inputImage = [UIImage imageNamed:@"logo"];
+    sourcePicture = [[GPUImagePicture alloc] initWithImage:inputImage smoothlyScaleOutput:YES];
+    [sourcePicture processImage];
+    [sourcePicture addTarget:addBlendFilter];
+    
+    [addBlendFilter addTarget:filterView];
+    
     [videoCamera startCameraCapture];
-    
-    dispatch_async(dispatch_get_global_queue(0, 0), ^{
-       
-        dispatch_async(dispatch_get_main_queue(), ^{
-            
-        });
-    });
-    
 }
 
 

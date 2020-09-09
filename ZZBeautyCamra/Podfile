@@ -9,7 +9,7 @@ target 'ZZBeautyCamra' do
   # Pods for ZZBeautyCamra
   pod 'GPUImage', '~> 0.1.7'
   pod 'CycleScrollView', '~> 1.0.0'
-  
+  pod 'Toast', '~> 4.0.0'
   target 'ZZBeautyCamraTests' do
     inherit! :search_paths
     # Pods for testing

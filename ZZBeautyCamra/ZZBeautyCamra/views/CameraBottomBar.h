@@ -13,11 +13,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)cameraBottomBarItemSelected:(NSInteger)index;
 
+- (void)cameraBottomBarRecordStatus:(NSInteger)status;
+
 @end
 
 @interface CameraBottomBar : UIView
 
 @property (nonatomic,weak) id<CameraBottomBarDelegate> delegate;
+
+@property (nonatomic,assign) NSInteger captureType;
 
 @end
 

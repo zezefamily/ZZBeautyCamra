@@ -25,7 +25,7 @@
     [self.view addSubview:bottomView];
     UIButton *reCaptureBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     reCaptureBtn.frame = CGRectMake(15, BOTTOM_HEIGHT/2-25, 50, 50);
-//    [reCaptureBtn setImage:[UIImage imageNamed:@""] forState:UIControlStateNormal];
+    [reCaptureBtn setImage:[UIImage imageNamed:@"close"] forState:UIControlStateNormal];
     reCaptureBtn.backgroundColor = [UIColor lightGrayColor];
     reCaptureBtn.tag = 600;
     [reCaptureBtn addTarget:self action:@selector(bottomClicked:) forControlEvents:UIControlEventTouchUpInside];
@@ -33,15 +33,13 @@
     
     UIButton *saveBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     saveBtn.frame = CGRectMake(self.view.frame.size.width - 15 - 50, BOTTOM_HEIGHT/2-25, 50, 50);
-//    [saveBtn setImage:[UIImage imageNamed:@""] forState:UIControlStateNormal];
+    [saveBtn setImage:[UIImage imageNamed:@"save"] forState:UIControlStateNormal];
     saveBtn.backgroundColor = [UIColor lightGrayColor];
     saveBtn.tag = 601;
     [saveBtn addTarget:self action:@selector(bottomClicked:) forControlEvents:UIControlEventTouchUpInside];
     [bottomView addSubview:saveBtn];
     
-    
     [self addResultView];
-    
 }
 
 - (void)addResultView

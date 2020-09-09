@@ -7,9 +7,13 @@
 //
 
 #import "CameraBottomBar.h"
-@import MetalKit;
+#import "VideoButton.h"
+@interface CameraBottomBar ()<VideoButtonDelegate>
+@end
 @implementation CameraBottomBar
-
+{
+    VideoButton *_videoButton;
+}
 - (instancetype)initWithFrame:(CGRect)frame
 {
     if(self == [super initWithFrame:frame]){
@@ -28,6 +32,12 @@
     [captureButton addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:captureButton];
     captureButton.tag = 401;
+    
+    _videoButton = [[VideoButton alloc]initWithFrame:CGRectMake(self.frame.size.width/2-self.frame.size.height/2, 0, self.frame.size.height, self.frame.size.height)];
+    _videoButton.delegate = self;
+    [self addSubview:_videoButton];
+    _videoButton.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0, 0);
+    
     
     float margin = 15;
     float between = 20;
@@ -58,4 +68,26 @@
         [self.delegate cameraBottomBarItemSelected:tag];
     }
 }
+
+- (void)setCaptureType:(NSInteger)captureType
+{
+    _captureType = captureType;
+    if(captureType == 0){ //拍摄
+        [UIView animateWithDuration:.3 animations:^{
+            self->_videoButton.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0.001, 0.001);
+        }];
+    }else{ //视频
+        [UIView animateWithDuration:.3 animations:^{
+           self->_videoButton.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1, 1);
+        }];
+    }
+}
+
+- (void)videoButtonRecordAnimationStatus:(NSInteger)status
+{
+    if([self.delegate respondsToSelector:@selector(cameraBottomBarRecordStatus:)]){
+        [self.delegate cameraBottomBarRecordStatus:status];
+    }
+}
+
 @end

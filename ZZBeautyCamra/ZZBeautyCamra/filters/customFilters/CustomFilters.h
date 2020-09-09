@@ -18,5 +18,5 @@
 
 #import "ZZBeautyFilter.h"
 #import "GPUImageBeautifyFilter.h"
-
+#import "WatermarkFilter.h"
 #endif /* CustomFilters_h */

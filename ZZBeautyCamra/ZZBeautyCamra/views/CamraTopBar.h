@@ -14,6 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)camraTopBarItemDidSelected:(NSInteger)index;
 
+- (void)cameraTopBarScaleChanged:(CGRect)rect scale:(NSString *)scale;
+
 @end
 
 @interface CamraTopBar : UIView

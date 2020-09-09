@@ -19,7 +19,7 @@
 #import "ZZMagicCamera.h"
 #import "CustomFilters.h"
 #import "CaptureImageResultViewController.h"
-
+#import "PreviewViewController.h"
 @interface CamraViewController ()<CamraTopBarDelegate,CameraBottomBarDelegate,UINavigationControllerDelegate,UIViewControllerTransitioningDelegate,ImageFilterViewControllerDelegate,CaptureImageResultViewControllerDelegate>
 @property (nonatomic,strong) ZZMagicCamera *magicCamera;
 @property (nonatomic,strong) CamraTopBar *cameraTopBar;
@@ -27,32 +27,21 @@
 @end
 
 @implementation CamraViewController
+{
+    GPUImagePicture *sourcePicture;
+    GPUImageUIElement *_inpuElement;
+    GPUImageFilter *filter;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor whiteColor];
+    GPUImageFilter *filter = [[GPUImageFilter alloc]init];
+    self.view.backgroundColor = [UIColor blackColor];
     self.navigationController.delegate = self;
     [self addFilterCamera];
     [self addTopBar];
-    
-//    GPUImageView *filteredVideoView = [[GPUImageView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
-////    filteredVideoView.backgroundColor = [UIColor blackColor];
-//    [self.view addSubview:filteredVideoView];
-//
-//    GPUImageStillCamera *videoCamera = [[GPUImageStillCamera alloc] initWithSessionPreset:AVCaptureSessionPreset1280x720 cameraPosition:AVCaptureDevicePositionFront];
-//    videoCamera.outputImageOrientation = UIInterfaceOrientationPortrait;
-////    videoCamera.horizontallyMirrorFrontFacingCamera = YES; //前置镜像
-//
-//    GPUImageSketchFilter *customFilter = [[GPUImageSketchFilter alloc]init];
-//
-//    // Add the view somewhere so it's visible
-//    [videoCamera addTarget:customFilter];
-//    [customFilter addTarget:filteredVideoView];
-//
-//    [videoCamera startCameraCapture];
 }
-
 
 #pragma mark - ImageFilterViewControllerDelegate
 - (void)imageFilterVCUpdateFilter:(GPUImageFilter *)filter
@@ -121,13 +110,33 @@
         [self.navigationController popViewControllerAnimated:YES];
     }else if (index == 1){ //前后摄像头切换
         [self.magicCamera switchCamera];
-    }else if (index == 2){ //拍照
-        
+    }else if  (index == 2){ //拍照
+        self.cameraBottomBar.captureType = 0;
+        self.magicCamera.captureType = ZZMagicCaptureTypeStill;
     }else if (index == 3){ //摄像
-        
+        self.cameraBottomBar.captureType = 1;
+        self.magicCamera.captureType = ZZMagicCaptureTypeVideo;
     }
 }
 #pragma mark - CameraBottomBarDelegate
+- (void)cameraBottomBarRecordStatus:(NSInteger)status
+{
+    if(status == 0){ //开始录制
+        [self.magicCamera magic_startRecording];
+    }else{ //结束录制
+        [self.magicCamera magic_stopRecordWithHandler:^(NSURL * _Nonnull tempMovieURL) {
+            PreviewViewController *previewVC = [[PreviewViewController alloc]init];
+            previewVC.videoURL = tempMovieURL;
+            [self.navigationController pushViewController:previewVC animated:YES];
+        }];
+    }
+}
+- (void)cameraTopBarScaleChanged:(CGRect)rect scale:(nonnull NSString *)scale
+{
+    [self.magicCamera changeCaptureViewScale:scale];
+    GPUImageCropFilter *cropFilter = [[GPUImageCropFilter alloc] initWithCropRegion:rect];
+    [self.magicCamera switchFilter:cropFilter];
+}
 - (void)cameraBottomBarItemSelected:(NSInteger)index
 {
     switch (index) {
@@ -135,21 +144,47 @@
         {
             static BOOL openBeauty = NO;
             if(!openBeauty){
-//                GPUImageBeautifyFilter *zzbeautyFilter = [[GPUImageBeautifyFilter alloc]init];
-//                [self.magicCamera switchFilter:zzbeautyFilter];
                 
+                ZZBeautyFilter *zzbeautyFilter = [[ZZBeautyFilter alloc]init];
+                [self.magicCamera switchFilter:zzbeautyFilter];
                 
+//                GPUImageCropFilter *cropFilter = [[GPUImageCropFilter alloc] initWithCropRegion:CGRectMake(0, 0, 1.0, 1.0)];
+//                [self.magicCamera switchFilter:cropFilter];
+//                return;
+//                GPUImageJFAVoronoiFilter *jfa = [[GPUImageJFAVoronoiFilter alloc]init];
+//                [jfa setSizeInPixels:CGSizeMake(124.0, 124.0)];
+//                [self.magicCamera switchFilter:jfa];
                 
-                UIImage *inputImage = [UIImage imageNamed:@"logo"];
-                GPUImageAddBlendFilter *filter = [[GPUImageAddBlendFilter alloc]init];
-                GPUImagePicture *sourcePicture = [[GPUImagePicture alloc] initWithImage:inputImage smoothlyScaleOutput:YES];
-                [sourcePicture processImage];
-                [sourcePicture addTarget:filter];
-//                [self.magicCamera.stillCamera removeAllTargets];
-                [self.magicCamera.stillCamera addTarget:filter];
-                [filter addTarget:self.magicCamera.captrueView];
+//                UIImage *inputImage = [UIImage imageNamed:@"logo"];
+//                WatermarkFilter *filter = [[WatermarkFilter alloc]init];
+//                sourcePicture = [[GPUImagePicture alloc] initWithImage:inputImage smoothlyScaleOutput:NO];
+//                [sourcePicture processImage];
+//                [sourcePicture addTarget:filter];
+//                [self.magicCamera switchFilter:filter];
                 
-                [self.magicCamera zz_startCameraCapture];
+                //添加GPUImageAlphaBlendFilter
+//                GPUImageDissolveBlendFilter
+//                GPUImageAlphaBlendFilter *blendFilter = [[GPUImageAlphaBlendFilter alloc]init];
+//                blendFilter.mix = 1.0;
+//                //GPUImageUIElement
+//                UIView *contentView = [[UIView alloc]initWithFrame:self.view.bounds];
+//                contentView.backgroundColor = [UIColor clearColor];
+//                UIImage *inputImage = [UIImage imageNamed:@"logo"];
+//                UIImageView *logoView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 100, 50)];
+//                logoView.center = contentView.center;
+//                [contentView addSubview:logoView];
+//                logoView.image = inputImage;
+//                logoView.hidden = NO;
+//                _inpuElement = [[GPUImageUIElement alloc]initWithView:contentView];
+//                [self.magicCamera.currentFilter addTarget:blendFilter];
+//                [_inpuElement addTarget:blendFilter];
+//                [blendFilter addTarget:self.magicCamera.captrueView];
+//
+//                __weak typeof(GPUImageUIElement *) weakUIElement = _inpuElement;
+//                [self.magicCamera.currentFilter setFrameProcessingCompletionBlock:^(GPUImageOutput *filter, CMTime frameTime) {
+////                    logoView.hidden = NO;
+//                    [weakUIElement updateWithTimestamp:frameTime];
+//                }];
                 
             }else{
                 GPUImageFilter *normalFilter = [[GPUImageFilter alloc]init];
@@ -178,23 +213,6 @@
     }
 }
 
-#pragma mark - 组合滤镜#测试
-- (void)addGPUImageFilter:(GPUImageOutput<GPUImageInput> *)filter group:(GPUImageFilterGroup *)group
-{
-    [group addFilter:filter];
-    GPUImageOutput<GPUImageInput> *newTerminalFilter = filter;
-    NSInteger count = group.filterCount;
-    if (count == 1){ //当group的filterCount = 1 时,
-        group.initialFilters = @[newTerminalFilter];
-        group.terminalFilter = newTerminalFilter;
-    }else{
-        GPUImageOutput<GPUImageInput> *terminalFilter = group.terminalFilter;
-        NSArray *initialFilters = group.initialFilters;
-        [terminalFilter addTarget:newTerminalFilter];
-        group.initialFilters = @[initialFilters[0]];
-        group.terminalFilter = newTerminalFilter;
-    }
-}
 
 - (UIPresentationController *)presentationControllerForPresentedViewController:(UIViewController *)presented presentingViewController:(UIViewController *)presenting sourceViewController:(UIViewController *)source
 {

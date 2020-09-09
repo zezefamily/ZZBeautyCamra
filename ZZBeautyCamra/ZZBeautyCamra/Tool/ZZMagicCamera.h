@@ -21,8 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ZZMagicCamera : UIView
 
-@property (nonatomic,strong) GPUImageStillCamera *stillCamera;
-@property (nonatomic,strong) GPUImageVideoCamera *videoCamera;
+@property (nonatomic,strong) GPUImageStillCamera *imageCamera;
 @property (nonatomic,strong) GPUImageFilter *currentFilter;
 @property (nonatomic,strong) GPUImageView *captrueView;
 
@@ -41,6 +40,13 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)capturePhotoAsJPEGCompletionHandler:(void (^)(NSData *processedJPEG, NSError *error))block;
 
 - (void)destroy;
+
+- (void)changeCaptureViewScale:(NSString *)scaleType;
+
+- (void)magic_startRecording;
+
+//- (void)magic_stopRecordWithHandler:(void(^)(BOOL success,NSError * _Nullable error))handler;
+- (void)magic_stopRecordWithHandler:(void(^)(NSURL *tempMovieURL))handler;
 
 @end
 
